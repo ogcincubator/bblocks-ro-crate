@@ -24,15 +24,15 @@
     }
   ],
   "shaclShapes": {},
-  "ldContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prof/context.jsonld",
+  "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/context.jsonld",
   "dateOfLastChange": "2026-08-12",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prof/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prof/schema.json"
+    "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prof/schema.yaml",
-  "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prof/context.jsonld",
-  "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prof/",
+  "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/prof/schema.yaml",
+  "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/prof/context.jsonld",
+  "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/prof/",
   "validationPassed": true,
   "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: PROF vocabulary\ndescription: 'Unconstrained carrier schema: this block''s content is its JSON-LD context,\n  not a data shape. The schema exists only so other blocks can `$ref` it via `bblocks://`\n  and inherit the context.'\ntype: object\nx-jsonld-extra-terms:\n  hasArtifact: http://www.w3.org/ns/dx/prof/hasArtifact\n  hasResource: http://www.w3.org/ns/dx/prof/hasResource\n  hasRole: http://www.w3.org/ns/dx/prof/hasRole\n  hasToken: http://www.w3.org/ns/dx/prof/hasToken\n  isProfileOf: http://www.w3.org/ns/dx/prof/isProfileOf\n  ResourceDescriptor: http://www.w3.org/ns/dx/prof/ResourceDescriptor\n  ResourceRole: http://www.w3.org/ns/dx/prof/ResourceRole\n  Profile: http://www.w3.org/ns/dx/prof/Profile\n",
   "gitRepository": "https://github.com/ogcincubator/bblocks-ro-crate",

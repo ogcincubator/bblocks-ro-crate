@@ -24,15 +24,15 @@
     }
   ],
   "shaclShapes": {},
-  "ldContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/context.jsonld",
+  "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/context.jsonld",
   "dateOfLastChange": "2026-08-12",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json"
+    "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/schema.yaml",
-  "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/context.jsonld",
-  "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/",
+  "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/codemeta/schema.yaml",
+  "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/codemeta/context.jsonld",
+  "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/codemeta/",
   "validationPassed": true,
   "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: CodeMeta vocabulary\ndescription: 'Unconstrained carrier schema: this block''s content is its JSON-LD context,\n  not a data shape. The schema exists only so other blocks can `$ref` it via `bblocks://`\n  and inherit the context.'\ntype: object\nx-jsonld-extra-terms:\n  softwareSuggestions: https://codemeta.github.io/terms/softwareSuggestions\n  continuousIntegration: https://codemeta.github.io/terms/continuousIntegration\n  buildInstructions: https://codemeta.github.io/terms/buildInstructions\n  developmentStatus: https://codemeta.github.io/terms/developmentStatus\n  embargoEndDate: https://codemeta.github.io/terms/embargoEndDate\n  readme: https://codemeta.github.io/terms/readme\n  issueTracker: https://codemeta.github.io/terms/issueTracker\n  referencePublication: https://codemeta.github.io/terms/referencePublication\n  hasSourceCode: https://codemeta.github.io/terms/hasSourceCode\n  isSourceCodeOf: https://codemeta.github.io/terms/isSourceCodeOf\n",
   "gitRepository": "https://github.com/ogcincubator/bblocks-ro-crate",

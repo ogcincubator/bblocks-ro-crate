@@ -28,15 +28,15 @@
     }
   ],
   "shaclShapes": {},
-  "ldContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/bioschemas/context.jsonld",
+  "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/context.jsonld",
   "dateOfLastChange": "2026-08-12",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json"
+    "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/bioschemas/schema.yaml",
-  "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/bioschemas/context.jsonld",
-  "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/bioschemas/",
+  "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/schema.yaml",
+  "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/context.jsonld",
+  "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/",
   "validationPassed": true,
   "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Bioschemas vocabulary\ndescription: 'Unconstrained carrier schema: this block''s content is its JSON-LD context,\n  not a data shape. The schema exists only so other blocks can `$ref` it via `bblocks://`\n  and inherit the context.'\ntype: object\nx-jsonld-extra-terms:\n  ComputationalWorkflow: https://bioschemas.org/terms/ComputationalWorkflow\n  input: https://bioschemas.org/terms/input\n  output: https://bioschemas.org/terms/output\n  FormalParameter: https://bioschemas.org/terms/FormalParameter\n",
   "gitRepository": "https://github.com/ogcincubator/bblocks-ro-crate",
