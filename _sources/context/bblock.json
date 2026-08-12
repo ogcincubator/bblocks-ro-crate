@@ -13,15 +13,16 @@
     { "title": "RO-Crate 1.3 Metadata section (vocabulary provenance)", "link": "https://www.researchobject.org/ro-crate/specification/1.3/metadata.html" }
   ],
   "dependsOn": [
-    "bblocks://ogc.researchobject.ro-crate.vocab.schema-org",
-    "bblocks://ogc.researchobject.ro-crate.vocab.pcdm",
-    "bblocks://ogc.researchobject.ro-crate.vocab.prof",
-    "bblocks://ogc.researchobject.ro-crate.vocab.dcterms",
-    "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations",
+    "bblocks://ogc.model.cross-domain.schema-org",
+    "bblocks://ogc.model.cross-domain.pcdm",
+    "bblocks://ogc.model.cross-domain.prof",
+    "bblocks://ogc.model.cross-domain.dcterms",
+    "bblocks://ogc.model.cross-domain.iana-relations",
     "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas",
-    "bblocks://ogc.researchobject.ro-crate.vocab.geosparql",
-    "bblocks://ogc.researchobject.ro-crate.vocab.codemeta",
-    "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav",
+    "bblocks://ogc.model.cross-domain.geosparql",
+    "bblocks://ogc.model.cross-domain.codemeta",
+    "bblocks://ogc.ogc-utils.prov",
+    "bblocks://ogc.model.cross-domain.pav",
     "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms"
   ]
 }

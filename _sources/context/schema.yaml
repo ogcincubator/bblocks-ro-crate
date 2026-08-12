@@ -8,13 +8,18 @@ description: >-
   prefix declarations.
 type: object
 allOf:
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.schema-org"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.pcdm"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.prof"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.dcterms"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations"
+  - "$ref": "bblocks://ogc.model.cross-domain.pcdm"
+  - "$ref": "bblocks://ogc.model.cross-domain.prof"
+  - "$ref": "bblocks://ogc.model.cross-domain.dcterms"
+  - "$ref": "bblocks://ogc.model.cross-domain.iana-relations"
   - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.geosparql"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.codemeta"
-  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav"
+  - "$ref": "bblocks://ogc.model.cross-domain.geosparql"
+  - "$ref": "bblocks://ogc.model.cross-domain.codemeta"
+  - "$ref": "bblocks://ogc.ogc-utils.prov"
+  - "$ref": "bblocks://ogc.model.cross-domain.pav"
   - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms"
+  # Schema.org last: the RO-Crate context uses Schema.org as its base vocabulary, so where a term
+  # name collides with one of the more specific vocabularies above (e.g. `Person`/`Organization`/
+  # `name`/`value` also defined by the imported PROV schema), Schema.org's binding must win. Context
+  # assembly is last-`$ref`-wins on collision, so this block stays last in the list.
+  - "$ref": "bblocks://ogc.model.cross-domain.schema-org"

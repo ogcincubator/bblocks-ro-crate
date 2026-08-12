@@ -8,32 +8,62 @@ just the vocabulary fragment they need instead of the whole thing.
 
 ## Composition
 
+Most of these vocabulary blocks are not RO-Crate-specific, so — per the
+[cross-domain model](https://github.com/ogcincubator/cross-domain-model) register's inclusion
+policy (international/industry standards only) — they live there or in the
+[PROV schema](https://github.com/ogcincubator/bblock-prov-schema) register instead of being
+duplicated locally. Only `bioschemas` (a proposed, not-yet-standardized vocabulary) and `ro-terms`
+(RO-Crate's own community namespace) remain local to this register.
+
 | Source | Building block | Terms |
 |---|---|---|
-| Schema.org | [`ro-crate.vocab.schema-org`](bblocks://ogc.researchobject.ro-crate.vocab.schema-org) | 3005 |
-| PCDM | [`ro-crate.vocab.pcdm`](bblocks://ogc.researchobject.ro-crate.vocab.pcdm) | 5 |
-| PROF | [`ro-crate.vocab.prof`](bblocks://ogc.researchobject.ro-crate.vocab.prof) | 8 |
-| Dublin Core Terms | [`ro-crate.vocab.dcterms`](bblocks://ogc.researchobject.ro-crate.vocab.dcterms) | 2 |
-| IANA link relations | [`ro-crate.vocab.iana-relations`](bblocks://ogc.researchobject.ro-crate.vocab.iana-relations) | 1 |
+| Schema.org | [`cross-domain.schema-org`](bblocks://ogc.model.cross-domain.schema-org) | 3005 |
+| PCDM | [`cross-domain.pcdm`](bblocks://ogc.model.cross-domain.pcdm) | 5 |
+| PROF | [`cross-domain.prof`](bblocks://ogc.model.cross-domain.prof) | 8 |
+| Dublin Core Terms | [`cross-domain.dcterms`](bblocks://ogc.model.cross-domain.dcterms) | 2 |
+| IANA link relations | [`cross-domain.iana-relations`](bblocks://ogc.model.cross-domain.iana-relations) | 1 |
 | Bioschemas | [`ro-crate.vocab.bioschemas`](bblocks://ogc.researchobject.ro-crate.vocab.bioschemas) | 4 |
-| GeoSPARQL | [`ro-crate.vocab.geosparql`](bblocks://ogc.researchobject.ro-crate.vocab.geosparql) | 2 |
-| CodeMeta | [`ro-crate.vocab.codemeta`](bblocks://ogc.researchobject.ro-crate.vocab.codemeta) | 10 |
-| PROV / PAV | [`ro-crate.vocab.prov-pav`](bblocks://ogc.researchobject.ro-crate.vocab.prov-pav) | 7 |
+| GeoSPARQL | [`cross-domain.geosparql`](bblocks://ogc.model.cross-domain.geosparql) | 2 |
+| CodeMeta | [`cross-domain.codemeta`](bblocks://ogc.model.cross-domain.codemeta) | 10 |
+| PROV | [`ogc-utils.prov`](bblocks://ogc.ogc-utils.prov) | 1 |
+| PAV | [`cross-domain.pav`](bblocks://ogc.model.cross-domain.pav) | 6 |
 | ro-terms | [`ro-crate.vocab.ro-terms`](bblocks://ogc.researchobject.ro-crate.vocab.ro-terms) | 1 |
 | *(this block)* RO-Crate-specific overrides | `File`, `Journal`, `HTML` | 3 |
 | *(this block)* Namespace prefix declarations | `pcdm`, `bibo`, `cc`, `dct`, `foaf`, `prof`, `profrole`, `rdf`, `rdfa`, `rdfs`, `frapo`, `rel`, `pav`, `prov`, `wfdesc`, `wfprov`, `roterms`, `relation`, `wf4ever`, `vann`, `geosparql` | 21 |
 
-3005 + 5 + 8 + 2 + 1 + 4 + 2 + 10 + 7 + 1 + 3 + 21 = **3069**, matching the original context exactly.
+3005 + 5 + 8 + 2 + 1 + 4 + 2 + 10 + 1 + 6 + 1 + 3 + 21 = **3069**, matching the original context exactly.
 
 ## Why the schema is a no-op
 
 The postprocessor assembles a block's JSON-LD context from its own `context.jsonld` plus the
 contexts of every block reachable through `bblocks://` references in its JSON Schema — context
-assembly is driven by schema `$ref` resolution, not a standalone mechanism. None of these blocks
-constrain any real data shape (they are pure vocabulary/term-mapping fragments), so each carries an
-unconstrained `type: object` schema whose only purpose is to be a valid `$ref` target. Applications
-should use the **assembled context** (`build/.../context.jsonld` for this block), not the source
-files, when processing RO-Crate JSON-LD.
+assembly is driven by schema `$ref` resolution, not a standalone mechanism. None of the vocabulary
+blocks constrain any real data shape (they are pure vocabulary/term-mapping fragments), so each
+carries an unconstrained `type: object` schema whose only purpose is to be a valid `$ref` target.
+The one exception, `ogc.ogc-utils.prov`, is a real structural PROV schema (Agents/Activities/
+Entities mixin) from the `prov-schema` register — it's pulled in for its `wasDerivedFrom` context
+mapping; its structural constraints have no effect here since this block is never itself validated
+against instance data. Applications should use the **assembled context**
+(`build/.../context.jsonld` for this block), not the source files, when processing RO-Crate JSON-LD.
+
+## Why Schema.org must be last in `allOf`
+
+Because `ogc.ogc-utils.prov` is the *full* PROV-O vocabulary rather than a single-term passthrough,
+it carries 118 terms beyond `wasDerivedFrom` (`Person`, `Organization`, `Collection`, `Role`,
+`Quotation`, `InstantaneousEvent`, `name`, `value`, `agent`, ...) — several of which collide with
+Schema.org term names RO-Crate actually depends on. Context assembly merges term-by-term in `allOf`
+order, last write wins per term. `schema-org` is listed last specifically so its bindings win any
+such collision — verified by re-checking every colliding term resolves back to `schema:*`, not
+`prov:*`, after assembly. If further vocabulary blocks are added to this `allOf` in the future,
+re-run the equivalence check below rather than assuming order doesn't matter.
+
+The assembled context therefore has 3188 terms, not 3069: the 119 extra ones (118 PROV-O terms plus
+`@version`) are harmless additions RO-Crate itself doesn't use, not term losses — every one of the
+original 3069 terms is still present and resolves to the same IRI. Two terms gained a genuine fix
+over the original spec context: `agent` and `wasDerivedFrom` are now explicitly typed `@type: @id`
+(they were bare, untyped strings in the original — meaning a strict JSON-LD processor would treat
+their values as string literals rather than IRI references), inherited correctly from
+`ogc.ogc-utils.prov`'s definitions.
 
 ## Notes on provenance
 
