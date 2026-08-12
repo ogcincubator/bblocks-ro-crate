@@ -7,16 +7,17 @@ description: 'Unconstrained carrier schema: this block''s content is its assembl
   into one, plus this block''s own RO-Crate-specific overrides and prefix declarations.'
 type: object
 allOf:
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/dcterms/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/pcdm/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/prof/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/dcterms/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/iana-relations/schema.yaml
 - $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/geosparql/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prov-pav/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/geosparql/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/codemeta/schema.yaml
+- $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/pav/schema.yaml
 - $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.yaml
+- $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/schema-org/schema.yaml
 x-jsonld-extra-terms:
   File: http://schema.org/MediaObject
   Journal: http://schema.org/Periodical

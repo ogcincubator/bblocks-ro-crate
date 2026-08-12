@@ -5,34 +5,37 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.json"
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/pcdm/schema.json"
     },
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.json"
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/prof/schema.json"
     },
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/schema.json"
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/dcterms/schema.json"
     },
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/dcterms/schema.json"
-    },
-    {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.json"
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/iana-relations/schema.json"
     },
     {
       "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json"
     },
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/geosparql/schema.json"
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/geosparql/schema.json"
     },
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json"
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/codemeta/schema.json"
     },
     {
-      "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prov-pav/schema.json"
+      "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json"
+    },
+    {
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/pav/schema.json"
     },
     {
       "$ref": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.json"
+    },
+    {
+      "$ref": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/schema-org/schema.json"
     }
   ],
   "x-jsonld-extra-terms": {

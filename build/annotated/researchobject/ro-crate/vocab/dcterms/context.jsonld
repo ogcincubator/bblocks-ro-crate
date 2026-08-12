@@ -1,7 +1,0 @@
-{
-  "@context": {
-    "conformsTo": "http://purl.org/dc/terms/conformsTo",
-    "Standard": "http://purl.org/dc/terms/Standard",
-    "@version": 1.1
-  }
-}

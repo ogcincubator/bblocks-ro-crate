@@ -1,5 +1,532 @@
 {
   "@context": {
+    "hasFile": "pcdm:hasFile",
+    "hasMember": "pcdm:hasMember",
+    "RepositoryCollection": "pcdm:Collection",
+    "RepositoryObject": "pcdm:Object",
+    "RepositoryFile": "pcdm:File",
+    "hasArtifact": "prof:hasArtifact",
+    "hasResource": "prof:hasResource",
+    "hasRole": "prof:hasRole",
+    "hasToken": "prof:hasToken",
+    "isProfileOf": "prof:isProfileOf",
+    "ResourceDescriptor": "prof:ResourceDescriptor",
+    "ResourceRole": "prof:ResourceRole",
+    "Profile": "prof:Profile",
+    "conformsTo": "dct:conformsTo",
+    "Standard": "dct:Standard",
+    "cite-as": "relation:cite-as",
+    "ComputationalWorkflow": "https://bioschemas.org/terms/ComputationalWorkflow",
+    "input": "https://bioschemas.org/terms/input",
+    "output": "https://bioschemas.org/terms/output",
+    "FormalParameter": "https://bioschemas.org/terms/FormalParameter",
+    "Geometry": "geosparql:Geometry",
+    "asWKT": "geosparql:asWKT",
+    "softwareSuggestions": "https://codemeta.github.io/terms/softwareSuggestions",
+    "continuousIntegration": "https://codemeta.github.io/terms/continuousIntegration",
+    "buildInstructions": "https://codemeta.github.io/terms/buildInstructions",
+    "developmentStatus": "https://codemeta.github.io/terms/developmentStatus",
+    "embargoEndDate": "https://codemeta.github.io/terms/embargoEndDate",
+    "readme": "https://codemeta.github.io/terms/readme",
+    "issueTracker": "https://codemeta.github.io/terms/issueTracker",
+    "referencePublication": "https://codemeta.github.io/terms/referencePublication",
+    "hasSourceCode": "https://codemeta.github.io/terms/hasSourceCode",
+    "isSourceCodeOf": "https://codemeta.github.io/terms/isSourceCodeOf",
+    "wasInfluencedBy": {
+      "@context": {
+        "Collection": "prov:Collection",
+        "InstantaneousEvent": "prov:InstantaneousEvent",
+        "Organization": "prov:Organization",
+        "Person": "prov:Person",
+        "Quotation": "prov:Quotation",
+        "Role": "prov:Role",
+        "value": "prov:value",
+        "agent": {
+          "@id": "prov:agent",
+          "@type": "@id"
+        },
+        "name": "rdfs:label"
+      },
+      "@id": "prov:wasInfluencedBy",
+      "@type": "@id"
+    },
+    "qualifiedInfluence": {
+      "@context": {
+        "influencer": {
+          "@context": {
+            "Collection": "prov:Collection",
+            "InstantaneousEvent": "prov:InstantaneousEvent",
+            "Organization": "prov:Organization",
+            "Person": "prov:Person",
+            "Quotation": "prov:Quotation",
+            "Role": "prov:Role",
+            "value": "prov:value",
+            "name": "rdfs:label"
+          },
+          "@id": "prov:influencer",
+          "@type": "@id"
+        },
+        "activity": {
+          "@context": {
+            "Collection": "prov:Collection",
+            "InstantaneousEvent": "prov:InstantaneousEvent",
+            "Organization": "prov:Organization",
+            "Person": "prov:Person",
+            "Quotation": "prov:Quotation",
+            "Role": "prov:Role",
+            "value": "prov:value",
+            "name": "rdfs:label"
+          },
+          "@id": "prov:activity",
+          "@type": "@id"
+        },
+        "agent": {
+          "@context": {
+            "name": "rdfs:label",
+            "Collection": "prov:Collection",
+            "InstantaneousEvent": "prov:InstantaneousEvent",
+            "Organization": "prov:Organization",
+            "Person": "prov:Person",
+            "Quotation": "prov:Quotation",
+            "Role": "prov:Role",
+            "value": "prov:value"
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedInfluence",
+      "@type": "@id"
+    },
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id"
+    },
+    "id": "@id",
+    "provType": "@type",
+    "featureType": "@type",
+    "entityType": "@type",
+    "has_provenance": {
+      "@id": "dct:provenance",
+      "@type": "@id"
+    },
+    "wasGeneratedBy": {
+      "@context": {
+        "Collection": "prov:Collection",
+        "InstantaneousEvent": "prov:InstantaneousEvent",
+        "Organization": "prov:Organization",
+        "Person": "prov:Person",
+        "Quotation": "prov:Quotation",
+        "Role": "prov:Role",
+        "value": "prov:value",
+        "agent": {
+          "@id": "prov:agent",
+          "@type": "@id"
+        },
+        "name": "rdfs:label"
+      },
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasAttributedTo": {
+      "@context": {
+        "name": "rdfs:label",
+        "Collection": "prov:Collection",
+        "InstantaneousEvent": "prov:InstantaneousEvent",
+        "Organization": "prov:Organization",
+        "Person": "prov:Person",
+        "Quotation": "prov:Quotation",
+        "Role": "prov:Role",
+        "value": "prov:value",
+        "agent": {
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "alternateOf": {
+      "@id": "prov:alternateOf",
+      "@type": "@id"
+    },
+    "hadPrimarySource": {
+      "@id": "prov:hadPrimarySource",
+      "@type": "@id"
+    },
+    "specializationOf": {
+      "@id": "prov:specializationOf",
+      "@type": "@id"
+    },
+    "wasInvalidatedBy": {
+      "@context": {
+        "Collection": "prov:Collection",
+        "InstantaneousEvent": "prov:InstantaneousEvent",
+        "Organization": "prov:Organization",
+        "Person": "prov:Person",
+        "Quotation": "prov:Quotation",
+        "Role": "prov:Role",
+        "value": "prov:value",
+        "agent": {
+          "@id": "prov:agent",
+          "@type": "@id"
+        },
+        "name": "rdfs:label"
+      },
+      "@id": "prov:wasInvalidatedBy",
+      "@type": "@id"
+    },
+    "wasQuotedFrom": {
+      "@id": "prov:wasQuotedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "generatedAtTime": {
+      "@id": "prov:generatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "invalidatedAtTime": {
+      "@id": "prov:invalidatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "value": "schema:value",
+    "qualifiedPrimarySource": {
+      "@id": "prov:qualifiedPrimarySource",
+      "@type": "@id"
+    },
+    "qualifiedQuotation": {
+      "@id": "prov:qualifiedQuotation",
+      "@type": "@id"
+    },
+    "qualifiedRevision": {
+      "@id": "prov:qualifiedRevision",
+      "@type": "@id"
+    },
+    "atLocation": {
+      "@id": "prov:atLocation",
+      "@type": "@id"
+    },
+    "links": {
+      "@context": {
+        "href": {
+          "@type": "@id",
+          "@id": "oa:hasTarget"
+        },
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "qualifiedGeneration": {
+      "@id": "prov:qualifiedGeneration",
+      "@type": "@id"
+    },
+    "qualifiedInvalidation": {
+      "@id": "prov:qualifiedInvalidation",
+      "@type": "@id"
+    },
+    "qualifiedDerivation": {
+      "@id": "prov:qualifiedDerivation",
+      "@type": "@id"
+    },
+    "qualifiedAttribution": {
+      "@context": {
+        "agent": {
+          "@context": {
+            "name": "rdfs:label",
+            "Collection": "prov:Collection",
+            "InstantaneousEvent": "prov:InstantaneousEvent",
+            "Organization": "prov:Organization",
+            "Person": "prov:Person",
+            "Quotation": "prov:Quotation",
+            "Role": "prov:Role",
+            "value": "prov:value"
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
+    "activityType": "@type",
+    "agentType": "@type",
+    "Activity": "prov:Activity",
+    "ActivityInfluence": "prov:ActivityInfluence",
+    "Agent": "prov:Agent",
+    "AgentInfluence": "prov:AgentInfluence",
+    "Association": "prov:Association",
+    "Attribution": "prov:Attribution",
+    "Bundle": "prov:Bundle",
+    "Collection": "schema:Collection",
+    "Communication": "prov:Communication",
+    "Delegation": "prov:Delegation",
+    "Derivation": "prov:Derivation",
+    "EmptyCollection": "prov:EmptyCollection",
+    "End": "prov:End",
+    "Entity": "prov:Entity",
+    "EntityInfluence": "prov:EntityInfluence",
+    "Generation": "prov:Generation",
+    "Influence": "prov:Influence",
+    "InstantaneousEvent": "schema:InstantaneousEvent",
+    "Invalidation": "prov:Invalidation",
+    "Location": "prov:Location",
+    "Organization": "schema:Organization",
+    "Person": "schema:Person",
+    "Plan": "prov:Plan",
+    "PrimarySource": "prov:PrimarySource",
+    "Quotation": "schema:Quotation",
+    "Revision": "prov:Revision",
+    "Role": "schema:Role",
+    "SoftwareAgent": "prov:SoftwareAgent",
+    "Start": "prov:Start",
+    "Usage": "prov:Usage",
+    "ServiceDescription": "prov:ServiceDescription",
+    "DirectQueryService": "prov:DirectQueryService",
+    "Accept": "prov:Accept",
+    "Contribute": "prov:Contribute",
+    "Contributor": "prov:Contributor",
+    "Copyright": "prov:Copyright",
+    "Create": "prov:Create",
+    "Creator": "prov:Creator",
+    "Modify": "prov:Modify",
+    "Publish": "prov:Publish",
+    "Publisher": "prov:Publisher",
+    "Replace": "prov:Replace",
+    "RightsAssignment": "prov:RightsAssignment",
+    "RightsHolder": "prov:RightsHolder",
+    "Submit": "prov:Submit",
+    "Dictionary": "prov:Dictionary",
+    "EmptyDictionary": "prov:EmptyDictionary",
+    "KeyEntityPair": "prov:KeyEntityPair",
+    "Insertion": "prov:Insertion",
+    "Removal": "prov:Removal",
+    "atTime": {
+      "@id": "prov:atTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "provenanceUriTemplate": "prov:provenanceUriTemplate",
+    "pairKey": {
+      "@id": "prov:pairKey",
+      "@type": "rdfs:Literal"
+    },
+    "removedKey": {
+      "@id": "prov:removedKey",
+      "@type": "rdfs:Literal"
+    },
+    "actedOnBehalfOf": {
+      "@id": "prov:actedOnBehalfOf",
+      "@type": "@id"
+    },
+    "agent": {
+      "@id": "schema:agent",
+      "@type": "@id"
+    },
+    "entity": {
+      "@id": "prov:entity",
+      "@type": "@id"
+    },
+    "generated": {
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "hadActivity": {
+      "@id": "prov:hadActivity",
+      "@type": "@id"
+    },
+    "activity": {
+      "@id": "prov:activity",
+      "@type": "@id"
+    },
+    "hadGeneration": {
+      "@id": "prov:hadGeneration",
+      "@type": "@id"
+    },
+    "hadPlan": {
+      "@id": "prov:hadPlan",
+      "@type": "@id"
+    },
+    "hadRole": {
+      "@id": "prov:hadRole",
+      "@type": "@id"
+    },
+    "hadUsage": {
+      "@id": "prov:hadUsage",
+      "@type": "@id"
+    },
+    "influenced": {
+      "@id": "prov:influenced",
+      "@type": "@id"
+    },
+    "influencer": {
+      "@id": "prov:influencer",
+      "@type": "@id"
+    },
+    "invalidated": {
+      "@id": "prov:invalidated",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@id": "prov:qualifiedAssociation",
+      "@type": "@id",
+      "@context": {
+        "agent": {
+          "@context": {
+            "name": "rdfs:label"
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      }
+    },
+    "qualifiedCommunication": {
+      "@id": "prov:qualifiedCommunication",
+      "@type": "@id"
+    },
+    "qualifiedDelegation": {
+      "@id": "prov:qualifiedDelegation",
+      "@type": "@id",
+      "@context": {
+        "agent": {
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      }
+    },
+    "qualifiedEnd": {
+      "@id": "prov:qualifiedEnd",
+      "@type": "@id"
+    },
+    "qualifiedStart": {
+      "@id": "prov:qualifiedStart",
+      "@type": "@id"
+    },
+    "qualifiedUsage": {
+      "@id": "prov:qualifiedUsage",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id",
+      "@context": {
+        "name": "rdfs:label",
+        "Collection": "prov:Collection",
+        "InstantaneousEvent": "prov:InstantaneousEvent",
+        "Organization": "prov:Organization",
+        "Person": "prov:Person",
+        "Quotation": "prov:Quotation",
+        "Role": "prov:Role",
+        "value": "prov:value",
+        "agent": {
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      }
+    },
+    "wasEndedBy": {
+      "@id": "prov:wasEndedBy",
+      "@type": "@id"
+    },
+    "wasInformedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "wasStartedBy": {
+      "@id": "prov:wasStartedBy",
+      "@type": "@id"
+    },
+    "has_anchor": {
+      "@id": "prov:has_anchor",
+      "@type": "@id"
+    },
+    "has_query_service": {
+      "@id": "prov:has_query_service",
+      "@type": "@id"
+    },
+    "describesService": {
+      "@id": "prov:describesService",
+      "@type": "@id"
+    },
+    "pingback": {
+      "@id": "prov:pingback",
+      "@type": "@id"
+    },
+    "dictionary": {
+      "@id": "prov:dictionary",
+      "@type": "@id"
+    },
+    "derivedByInsertionFrom": {
+      "@id": "prov:derivedByInsertionFrom",
+      "@type": "@id"
+    },
+    "derivedByRemovalFrom": {
+      "@id": "prov:derivedByRemovalFrom",
+      "@type": "@id"
+    },
+    "insertedKeyEntityPair": {
+      "@id": "prov:insertedKeyEntityPair",
+      "@type": "@id"
+    },
+    "hadDictionaryMember": {
+      "@id": "prov:hadDictionaryMember",
+      "@type": "@id"
+    },
+    "pairEntity": {
+      "@id": "prov:pairEntity",
+      "@type": "@id"
+    },
+    "qualifiedInsertion": {
+      "@id": "prov:qualifiedInsertion",
+      "@type": "@id"
+    },
+    "qualifiedRemoval": {
+      "@id": "prov:qualifiedRemoval",
+      "@type": "@id"
+    },
+    "asInBundle": {
+      "@id": "prov:asInBundle",
+      "@type": "@id"
+    },
+    "mentionOf": {
+      "@id": "prov:mentionOf",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "importedFrom": "pav:importedFrom",
+    "importedOn": "pav:importedOn",
+    "importedBy": "pav:importedBy",
+    "retrievedFrom": "pav:retrievedFrom",
+    "retrievedOn": "pav:retrievedOn",
+    "retrievedBy": "pav:retrievedBy",
+    "localPath": "https://w3id.org/ro/terms#localPath",
     "3DModel": "schema:3DModel",
     "AMRadioChannel": "schema:AMRadioChannel",
     "APIReference": "schema:APIReference",
@@ -209,7 +736,6 @@
     "CoOp": "schema:CoOp",
     "Code": "schema:Code",
     "CohortStudy": "schema:CohortStudy",
-    "Collection": "schema:Collection",
     "CollectionPage": "schema:CollectionPage",
     "CollegeOrUniversity": "schema:CollegeOrUniversity",
     "ComedyClub": "schema:ComedyClub",
@@ -604,7 +1130,6 @@
     "InsertAction": "schema:InsertAction",
     "InstallAction": "schema:InstallAction",
     "Installment": "schema:Installment",
-    "InstantaneousEvent": "schema:InstantaneousEvent",
     "InsuranceAgency": "schema:InsuranceAgency",
     "Intangible": "schema:Intangible",
     "Integer": "schema:Integer",
@@ -922,7 +1447,6 @@
     "OrderProcessing": "schema:OrderProcessing",
     "OrderReturned": "schema:OrderReturned",
     "OrderStatus": "schema:OrderStatus",
-    "Organization": "schema:Organization",
     "OrganizationRole": "schema:OrganizationRole",
     "OrganizeAction": "schema:OrganizeAction",
     "OriginalMediaContent": "schema:OriginalMediaContent",
@@ -975,7 +1499,6 @@
     "PerformingGroup": "schema:PerformingGroup",
     "Periodical": "schema:Periodical",
     "Permit": "schema:Permit",
-    "Person": "schema:Person",
     "PetStore": "schema:PetStore",
     "Pharmacy": "schema:Pharmacy",
     "PharmacySpecialty": "schema:PharmacySpecialty",
@@ -1071,7 +1594,6 @@
     "Quantity": "schema:Quantity",
     "Question": "schema:Question",
     "Quiz": "schema:Quiz",
-    "Quotation": "schema:Quotation",
     "QuoteAction": "schema:QuoteAction",
     "RVPark": "schema:RVPark",
     "RadiationTherapy": "schema:RadiationTherapy",
@@ -1160,7 +1682,6 @@
     "RightHandDriving": "schema:RightHandDriving",
     "RisksOrComplicationsHealthAspect": "schema:RisksOrComplicationsHealthAspect",
     "RiverBodyOfWater": "schema:RiverBodyOfWater",
-    "Role": "schema:Role",
     "RoofingContractor": "schema:RoofingContractor",
     "Room": "schema:Room",
     "RsvpAction": "schema:RsvpAction",
@@ -1527,7 +2048,6 @@
     "affectedBy": "schema:affectedBy",
     "affiliation": "schema:affiliation",
     "afterMedia": "schema:afterMedia",
-    "agent": "schema:agent",
     "agentInteractionStatistic": "schema:agentInteractionStatistic",
     "aggregateElement": "schema:aggregateElement",
     "aggregateRating": "schema:aggregateRating",
@@ -2388,7 +2908,6 @@
     "musicReleaseFormat": "schema:musicReleaseFormat",
     "musicalKey": "schema:musicalKey",
     "naics": "schema:naics",
-    "name": "schema:name",
     "namedPosition": "schema:namedPosition",
     "nationality": "schema:nationality",
     "naturalProgression": "schema:naturalProgression",
@@ -2945,7 +3464,6 @@
     "validIn": "schema:validIn",
     "validThrough": "schema:validThrough",
     "validUntil": "schema:validUntil",
-    "value": "schema:value",
     "valueAddedTaxIncluded": "schema:valueAddedTaxIncluded",
     "valueMaxLength": "schema:valueMaxLength",
     "valueMinLength": "schema:valueMinLength",
@@ -3004,50 +3522,9 @@
     "yearsInOperation": "schema:yearsInOperation",
     "yield": "schema:yield",
     "path": "schema:contentUrl",
-    "hasFile": "pcdm:hasFile",
-    "hasMember": "pcdm:hasMember",
-    "RepositoryCollection": "pcdm:Collection",
-    "RepositoryObject": "pcdm:Object",
-    "RepositoryFile": "pcdm:File",
-    "hasArtifact": "prof:hasArtifact",
-    "hasResource": "prof:hasResource",
-    "hasRole": "prof:hasRole",
-    "hasToken": "prof:hasToken",
-    "isProfileOf": "prof:isProfileOf",
-    "ResourceDescriptor": "prof:ResourceDescriptor",
-    "ResourceRole": "prof:ResourceRole",
-    "Profile": "prof:Profile",
-    "conformsTo": "dct:conformsTo",
-    "Standard": "dct:Standard",
-    "cite-as": "relation:cite-as",
-    "ComputationalWorkflow": "https://bioschemas.org/terms/ComputationalWorkflow",
-    "input": "https://bioschemas.org/terms/input",
-    "output": "https://bioschemas.org/terms/output",
-    "FormalParameter": "https://bioschemas.org/terms/FormalParameter",
-    "Geometry": "geosparql:Geometry",
-    "asWKT": "geosparql:asWKT",
-    "softwareSuggestions": "https://codemeta.github.io/terms/softwareSuggestions",
-    "continuousIntegration": "https://codemeta.github.io/terms/continuousIntegration",
-    "buildInstructions": "https://codemeta.github.io/terms/buildInstructions",
-    "developmentStatus": "https://codemeta.github.io/terms/developmentStatus",
-    "embargoEndDate": "https://codemeta.github.io/terms/embargoEndDate",
-    "readme": "https://codemeta.github.io/terms/readme",
-    "issueTracker": "https://codemeta.github.io/terms/issueTracker",
-    "referencePublication": "https://codemeta.github.io/terms/referencePublication",
-    "hasSourceCode": "https://codemeta.github.io/terms/hasSourceCode",
-    "isSourceCodeOf": "https://codemeta.github.io/terms/isSourceCodeOf",
-    "wasDerivedFrom": "prov:wasDerivedFrom",
-    "importedFrom": "pav:importedFrom",
-    "importedOn": "pav:importedOn",
-    "importedBy": "pav:importedBy",
-    "retrievedFrom": "pav:retrievedFrom",
-    "retrievedOn": "pav:retrievedOn",
-    "retrievedBy": "pav:retrievedBy",
-    "localPath": "https://w3id.org/ro/terms#localPath",
     "File": "schema:MediaObject",
     "Journal": "schema:Periodical",
     "HTML": "rdf:HTML",
-    "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "pcdm": "http://pcdm.org/models#",
     "bibo": "http://purl.org/ontology/bibo/",
@@ -3069,6 +3546,9 @@
     "wf4ever": "http://purl.org/ro/wf4ever#",
     "vann": "http://purl.org/vocab/vann/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "schema": "http://schema.org/",
     "@version": 1.1
   }
 }
