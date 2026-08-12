@@ -1,22 +1,78 @@
 {
   "summary": {
-    "total": 3,
-    "passed": 3,
+    "total": 4,
+    "passed": 4,
     "failed": 0,
     "result": true
   },
   "bblocks": {
-    "ogc.researchobject.ro-crate.vocab.bioschemas": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.bioschemas - Bioschemas vocabulary",
-      "bblockName": "Bioschemas vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.bioschemas",
-      "generated": "2026-08-12T13:31:15.936988+00:00",
+    "ogc.researchobject.ro-crate.bioschemas.formal-parameter": {
+      "title": "Validation report for ogc.researchobject.ro-crate.bioschemas.formal-parameter - Bioschemas FormalParameter",
+      "bblockName": "Bioschemas FormalParameter",
+      "bblockId": "ogc.researchobject.ro-crate.bioschemas.formal-parameter",
+      "generated": "2026-08-12T13:55:29.785593+00:00",
       "result": true,
-      "items": [],
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/researchobject/ro-crate/bioschemas/formal-parameter/example_1_1.json",
+            "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/tests/researchobject/ro-crate/bioschemas/formal-parameter/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using example_1_1.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 4,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "globalErrors": {},
       "counts": {
-        "total": 0,
-        "passed": 0,
+        "total": 1,
+        "passed": 1,
         "failed": 0
       }
     },
@@ -24,7 +80,7 @@
       "title": "Validation report for ogc.researchobject.ro-crate.vocab.ro-terms - RO-Crate terms vocabulary",
       "bblockName": "RO-Crate terms vocabulary",
       "bblockId": "ogc.researchobject.ro-crate.vocab.ro-terms",
-      "generated": "2026-08-12T13:31:15.942171+00:00",
+      "generated": "2026-08-12T13:55:29.791699+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -34,11 +90,81 @@
         "failed": 0
       }
     },
+    "ogc.researchobject.ro-crate.bioschemas.computational-workflow": {
+      "title": "Validation report for ogc.researchobject.ro-crate.bioschemas.computational-workflow - Bioschemas ComputationalWorkflow",
+      "bblockName": "Bioschemas ComputationalWorkflow",
+      "bblockId": "ogc.researchobject.ro-crate.bioschemas.computational-workflow",
+      "generated": "2026-08-12T13:55:29.843954+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/researchobject/ro-crate/bioschemas/computational-workflow/example_1_1.json",
+            "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/tests/researchobject/ro-crate/bioschemas/computational-workflow/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using example_1_1.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 28,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
     "ogc.researchobject.ro-crate.context": {
       "title": "Validation report for ogc.researchobject.ro-crate.context - RO-Crate JSON-LD Context",
       "bblockName": "RO-Crate JSON-LD Context",
       "bblockId": "ogc.researchobject.ro-crate.context",
-      "generated": "2026-08-12T13:31:15.972754+00:00",
+      "generated": "2026-08-12T13:55:29.916025+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},

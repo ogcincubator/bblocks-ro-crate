@@ -2,8 +2,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.w3.org/ns/oa#> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.w3.org/ns/oa#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -20,12 +20,12 @@
     rdfs:label "RO-Crate JSON-LD Context" ;
     dct:abstract "Assembles the RO-Crate 1.3 JSON-LD context from its constituent vocabulary building blocks, and adds the RO-Crate-specific term overrides (`File`, `Journal`, `HTML`) and namespace prefix declarations. The context produced by this block is equivalent, term for term, to <https://w3id.org/ro/crate/1.3/context>."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/context/index.json> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/context/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.context> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/context/index.md> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/context/index.json> ] ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2026-08-12"^^xsd:date ;
     dct:source <https://w3id.org/ro/crate/1.3/context>,
@@ -58,7 +58,8 @@
         <bblocks://ogc.model.cross-domain.prof>,
         <bblocks://ogc.model.cross-domain.schema-org>,
         <bblocks://ogc.ogc-utils.prov>,
-        <bblocks://ogc.researchobject.ro-crate.vocab.bioschemas>,
+        <bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow>,
+        <bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter>,
         <bblocks://ogc.researchobject.ro-crate.vocab.ro-terms> ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/context/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -72,60 +73,62 @@
 
 <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N944191a34f424632bbb7d2ddf6a64862 ;
+    prov:wasAttributedTo _:Nd02587c3e4634f468e960b835f8d07ff ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-08-12T13:31:16.160534"^^xsd:dateTime ;
-            prov:startedAtTime "2026-08-12T13:31:15.989141"^^xsd:dateTime ;
+            prov:endedAtTime "2026-08-12T13:55:30.066718"^^xsd:dateTime ;
+            prov:startedAtTime "2026-08-12T13:55:29.935018"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
                 [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:c48f7ff623fe9eab4744df3e8b398b446f423161" ;
+                    dct:hasVersion "git:1b3820a839de67d3394a9686e8b6338941d8b742" ;
                     rdfs:seeAlso <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ] ;
-            prov:wasAssociatedWith _:N944191a34f424632bbb7d2ddf6a64862 ] .
+            prov:wasAssociatedWith _:Nd02587c3e4634f468e960b835f8d07ff ] .
 
 <https://www.researchobject.org/ro-crate/specification/1.3/> rdfs:label "RO-Crate 1.3 Specification" .
 
 <https://www.researchobject.org/ro-crate/specification/1.3/metadata.html> rdfs:label "RO-Crate 1.3 Metadata section (vocabulary provenance)" .
 
-<bblocks://ogc.researchobject.ro-crate.vocab.bioschemas> a skos:Concept,
+<https://www.researchobject.org/ro-crate/specification/1.3/workflows.html> rdfs:label "RO-Crate Workflow profile" .
+
+<bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow> a skos:Concept,
         dcat:Dataset,
         bblocks:BBlock,
-        bblocks:Model ;
-    rdfs:label "Bioschemas vocabulary" ;
-    dct:abstract "Terms proposed by the Bioschemas ComputationalWorkflow and FormalParameter profiles for inclusion in Schema.org, used by RO-Crate to describe [workflows](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+        bblocks:Schema ;
+    rdfs:label "Bioschemas ComputationalWorkflow" ;
+    dct:abstract "A computational workflow — an orchestrated, repeatable pattern of activity executed by a computational process — as described by RO-Crate's [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.bioschemas> ],
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.bioschemas.computational-workflow> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/bioschemas/index.md> ],
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/bioschemas/computational-workflow/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/bioschemas/index.json> ] ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/bioschemas/computational-workflow/index.json> ] ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2026-08-12"^^xsd:date ;
     dct:source <https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE>,
-        <https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE>,
-        <https://w3id.org/ro/crate/1.3/context> ;
+        <https://www.researchobject.org/ro-crate/specification/1.3/workflows.html> ;
+    rdfs:subClassOf <https://bioschemas.org/terms/ComputationalWorkflow> ;
     skos:inScheme <https://ogcincubator.github.io/bblocks-ro-crate/> ;
-    skos:prefLabel "Bioschemas vocabulary" ;
+    skos:prefLabel "Bioschemas ComputationalWorkflow" ;
     skos:topConceptOf <https://ogcincubator.github.io/bblocks-ro-crate/> ;
     dcat:keyword "bioschemas",
-        "vocabulary",
         "workflows" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json> ;
-            prof:hasRole role:schema ] ;
-    bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/context.jsonld> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
+    bblocks:dependsOn <bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter> ;
+    bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/computational-workflow/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
@@ -136,10 +139,10 @@
     rdfs:label "RO-Crate terms vocabulary" ;
     dct:abstract "The custom RO-Crate community namespace, used in the core context for `localPath`."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/ro-terms/index.md> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/ro-terms/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/ro-terms/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.ro-terms> ] ;
     dct:hasVersion "1.0.0" ;
@@ -151,23 +154,61 @@
     skos:topConceptOf <https://ogcincubator.github.io/bblocks-ro-crate/> ;
     dcat:keyword "ro-terms",
         "vocabulary" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/ro-terms/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
 <https://w3id.org/ro/crate/1.3/context> rdfs:label "RO-Crate 1.3 JSON-LD Context" .
+
+<bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Bioschemas FormalParameter" ;
+    dct:abstract "An identified variable standing for an actual value consumed or produced by a computational workflow, e.g. a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) input or output."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.bioschemas.formal-parameter> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/bioschemas/formal-parameter/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/bioschemas/formal-parameter/index.json> ] ;
+    dct:hasVersion "1.0.0" ;
+    dct:modified "2026-08-12"^^xsd:date ;
+    dct:source <https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE> ;
+    rdfs:subClassOf <https://bioschemas.org/terms/FormalParameter> ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-ro-crate/> ;
+    skos:prefLabel "Bioschemas FormalParameter" ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-ro-crate/> ;
+    dcat:keyword "bioschemas",
+        "workflows" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/context.jsonld> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
 
 <https://ogcincubator.github.io/bblocks-ro-crate/> a skos:ConceptScheme,
         dcat:Catalog,
@@ -186,30 +227,31 @@ assembled context is equivalent, term for term, to the original. See the
 [`ro-crate.context`](bblocks://ogc.researchobject.ro-crate.context) block for the full composition and
 provenance notes.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-08-12T13:31:12.949679"^^xsd:dateTime ;
+    dct:modified "2026-08-12T13:55:26.110843"^^xsd:dateTime ;
     owl:imports <https://ogcincubator.github.io/bblock-prov-schema/build/register.json>,
         <https://ogcincubator.github.io/cross-domain-model/build/register.json>,
         <https://opengeospatial.github.io/bblocks/register.json> ;
-    skos:hasTopConcept <bblocks://ogc.researchobject.ro-crate.context>,
-        <bblocks://ogc.researchobject.ro-crate.vocab.bioschemas>,
+    skos:hasTopConcept <bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow>,
+        <bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter>,
+        <bblocks://ogc.researchobject.ro-crate.context>,
         <bblocks://ogc.researchobject.ro-crate.vocab.ro-terms> ;
     skos:prefLabel "Building Blocks - RO-Crate Building Blocks" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
-            dct:type "application/ld+json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.jsonld> ],
-        [ rdfs:label "This Building Blocks Register in JSON format" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ],
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.ttl> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.ttl> ] ;
     foaf:homepage <https://ogcincubator.github.io/bblocks-ro-crate/> ;
     bblocks:hasValidationReport <https://ogcincubator.github.io/bblocks-ro-crate/build/tests/report.html> .
 
-_:N944191a34f424632bbb7d2ddf6a64862 a prov:Agent,
+_:Nd02587c3e4634f468e960b835f8d07ff a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.32.dev1+g4f7b75c19" ;

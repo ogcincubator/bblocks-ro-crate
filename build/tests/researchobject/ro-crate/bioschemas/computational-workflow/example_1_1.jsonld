@@ -1,0 +1,45 @@
+{
+  "@context": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/context.jsonld",
+  "name": "Population and community metrics calculation from Biodiversity data",
+  "description": "Galaxy-E (ecology.usegalaxy.eu) workflow to calculate species presence / absence, community metrics and compute generalized linear models to identify effects and significativity of these effects on biodiversity.",
+  "url": "https://workflowhub.eu/workflows/49",
+  "keywords": "GLM, Species abundance, Community_metrics, Ecology, Modeling, Presence_absence, Biodiversity, Statistics",
+  "license": "https://opensource.org/licenses/MIT",
+  "creator": [
+    {
+      "name": "Yvan Le Bras",
+      "url": "https://workflowhub.eu/people/51"
+    },
+    {
+      "name": "Coline Royaux",
+      "url": "https://workflowhub.eu/people/52"
+    }
+  ],
+  "producer": [
+    {
+      "name": "PNDB",
+      "url": "https://workflowhub.eu/projects/19"
+    }
+  ],
+  "dateCreated": "2020-07-24",
+  "dateModified": "2020-07-24",
+  "encodingFormat": "application/zip",
+  "sdPublisher": [
+    {
+      "name": "Yvan Le Bras",
+      "url": "https://workflowhub.eu/people/51"
+    }
+  ],
+  "version": 2,
+  "image": "https://workflowhub.eu/workflows/49/diagram?version=2",
+  "programmingLanguage": "Galaxy",
+  "input": [
+    {
+      "name": "0_Input",
+      "encodingFormat": "http://edamontology.org/format_3752",
+      "additionalType": "http://edamontology.org/data_3707",
+      "description": "Species count. A tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column split in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance."
+    }
+  ],
+  "output": []
+}

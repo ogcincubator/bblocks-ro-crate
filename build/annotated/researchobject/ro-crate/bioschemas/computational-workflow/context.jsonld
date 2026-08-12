@@ -1,0 +1,121 @@
+{
+  "@context": {
+    "ComputationalWorkflow": "bioschemas:ComputationalWorkflow",
+    "codeValue": "schema:codeValue",
+    "input": {
+      "@context": {
+        "identifier": {
+          "@context": {
+            "propertyID": "schema:propertyID"
+          },
+          "@id": "schema:identifier"
+        },
+        "additionalType": "schema:additionalType",
+        "defaultValue": "schema:defaultValue",
+        "valueRequired": "schema:valueRequired"
+      },
+      "@id": "bioschemas:input"
+    },
+    "output": {
+      "@context": {
+        "identifier": {
+          "@context": {
+            "propertyID": "schema:propertyID"
+          },
+          "@id": "schema:identifier"
+        },
+        "additionalType": "schema:additionalType",
+        "defaultValue": "schema:defaultValue",
+        "valueRequired": "schema:valueRequired"
+      },
+      "@id": "bioschemas:output"
+    },
+    "creativeWorkStatus": {
+      "@context": {
+        "termCode": "schema:termCode"
+      },
+      "@id": "schema:creativeWorkStatus"
+    },
+    "documentation": "schema:documentation",
+    "funding": {
+      "@context": {
+        "sponsor": {
+          "@context": {
+            "affiliation": "schema:affiliation"
+          },
+          "@id": "schema:sponsor"
+        }
+      },
+      "@id": "schema:funding"
+    },
+    "maintainer": {
+      "@context": {
+        "affiliation": "schema:affiliation"
+      },
+      "@id": "schema:maintainer"
+    },
+    "softwareRequirements": "schema:softwareRequirements",
+    "conditionsOfAccess": "schema:conditionsOfAccess",
+    "targetProduct": "schema:targetProduct",
+    "programmingLanguage": "schema:programmingLanguage",
+    "runtimePlatform": "schema:runtimePlatform",
+    "alternateName": "schema:alternateName",
+    "description": "schema:description",
+    "identifier": {
+      "@context": {
+        "value": "schema:value",
+        "valueReference": "schema:valueReference",
+        "unitCode": "schema:unitCode",
+        "unitText": "schema:unitText"
+      },
+      "@id": "schema:identifier"
+    },
+    "image": "schema:image",
+    "name": "schema:name",
+    "url": "schema:url",
+    "citation": "schema:citation",
+    "contributor": {
+      "@context": {
+        "affiliation": "schema:affiliation"
+      },
+      "@id": "schema:contributor"
+    },
+    "creator": {
+      "@context": {
+        "affiliation": "schema:affiliation"
+      },
+      "@id": "schema:creator"
+    },
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "encodingFormat": "schema:encodingFormat",
+    "hasPart": "schema:hasPart",
+    "isBasedOn": "schema:isBasedOn",
+    "keywords": "schema:keywords",
+    "license": "schema:license",
+    "producer": {
+      "@context": {
+        "affiliation": "schema:affiliation"
+      },
+      "@id": "schema:producer"
+    },
+    "publisher": {
+      "@context": {
+        "affiliation": "schema:affiliation"
+      },
+      "@id": "schema:publisher"
+    },
+    "sdPublisher": {
+      "@context": {
+        "affiliation": "schema:affiliation"
+      },
+      "@id": "schema:sdPublisher"
+    },
+    "version": "schema:version",
+    "FormalParameter": "bioschemas:FormalParameter",
+    "bioschemas": "https://bioschemas.org/terms/",
+    "schema": "http://schema.org/",
+    "@version": 1.1
+  }
+}

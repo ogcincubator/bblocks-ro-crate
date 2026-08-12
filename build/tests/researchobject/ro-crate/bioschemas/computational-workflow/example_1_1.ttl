@@ -1,0 +1,28 @@
+@prefix bioschemas: <https://bioschemas.org/terms/> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] schema1:creator [ schema1:name "Coline Royaux" ;
+            schema1:url "https://workflowhub.eu/people/52" ],
+        [ schema1:name "Yvan Le Bras" ;
+            schema1:url "https://workflowhub.eu/people/51" ] ;
+    schema1:dateCreated "2020-07-24" ;
+    schema1:dateModified "2020-07-24" ;
+    schema1:description "Galaxy-E (ecology.usegalaxy.eu) workflow to calculate species presence / absence, community metrics and compute generalized linear models to identify effects and significativity of these effects on biodiversity." ;
+    schema1:encodingFormat "application/zip" ;
+    schema1:image "https://workflowhub.eu/workflows/49/diagram?version=2" ;
+    schema1:keywords "GLM, Species abundance, Community_metrics, Ecology, Modeling, Presence_absence, Biodiversity, Statistics" ;
+    schema1:license "https://opensource.org/licenses/MIT" ;
+    schema1:name "Population and community metrics calculation from Biodiversity data" ;
+    schema1:producer [ schema1:name "PNDB" ;
+            schema1:url "https://workflowhub.eu/projects/19" ] ;
+    schema1:programmingLanguage "Galaxy" ;
+    schema1:sdPublisher [ schema1:name "Yvan Le Bras" ;
+            schema1:url "https://workflowhub.eu/people/51" ] ;
+    schema1:url "https://workflowhub.eu/workflows/49" ;
+    schema1:version 2 ;
+    bioschemas:input [ schema1:additionalType "http://edamontology.org/data_3707" ;
+            schema1:description "Species count. A tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column split in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance." ;
+            schema1:encodingFormat "http://edamontology.org/format_3752" ;
+            schema1:name "0_Input" ] .
+

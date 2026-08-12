@@ -17,17 +17,23 @@ provenance notes.
 
 ## Building Blocks
 
-### `ogc.researchobject.ro-crate.vocab.bioschemas` — Bioschemas vocabulary
+### `ogc.researchobject.ro-crate.bioschemas.formal-parameter` — Bioschemas FormalParameter
 
-**Type:** model
+**Type:** schema
 
-Terms proposed by the Bioschemas ComputationalWorkflow and FormalParameter profiles for inclusion in Schema.org, used by RO-Crate to describe [workflows](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html).
+An identified variable standing for an actual value consumed or produced by a computational workflow, e.g. a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) input or output.
 
 ### `ogc.researchobject.ro-crate.vocab.ro-terms` — RO-Crate terms vocabulary
 
 **Type:** model
 
 The custom RO-Crate community namespace, used in the core context for `localPath`.
+
+### `ogc.researchobject.ro-crate.bioschemas.computational-workflow` — Bioschemas ComputationalWorkflow
+
+**Type:** schema
+
+A computational workflow — an orchestrated, repeatable pattern of activity executed by a computational process — as described by RO-Crate's [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html).
 
 ### `ogc.researchobject.ro-crate.context` — RO-Crate JSON-LD Context
 

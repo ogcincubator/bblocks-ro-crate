@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "FormalParameter": "bioschemas:FormalParameter",
+    "name": "schema:name",
+    "identifier": {
+      "@context": {
+        "url": "schema:url",
+        "propertyID": "schema:propertyID"
+      },
+      "@id": "schema:identifier"
+    },
+    "description": "schema:description",
+    "additionalType": "schema:additionalType",
+    "defaultValue": {
+      "@context": {
+        "url": "schema:url"
+      },
+      "@id": "schema:defaultValue"
+    },
+    "valueRequired": "schema:valueRequired",
+    "encodingFormat": "schema:encodingFormat",
+    "bioschemas": "https://bioschemas.org/terms/",
+    "schema": "http://schema.org/",
+    "@version": 1.1
+  }
+}

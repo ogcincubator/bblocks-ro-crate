@@ -23,7 +23,8 @@ Most of these vocabulary blocks are not RO-Crate-specific, so — per the
 [cross-domain model](https://github.com/ogcincubator/cross-domain-model) register's inclusion
 policy (international/industry standards only) — they live there or in the
 [PROV schema](https://github.com/ogcincubator/bblock-prov-schema) register instead of being
-duplicated locally. Only `bioschemas` (a proposed, not-yet-standardized vocabulary) and `ro-terms`
+duplicated locally. Only `bioschemas` (a proposed, not-yet-standardized vocabulary, and — unlike the
+others — a pair of real structural schema blocks, not just a context passthrough) and `ro-terms`
 (RO-Crate's own community namespace) remain local to this register.
 
 | Source | Building block | Terms |
@@ -33,7 +34,7 @@ duplicated locally. Only `bioschemas` (a proposed, not-yet-standardized vocabula
 | PROF | [`cross-domain.prof`](bblocks://ogc.model.cross-domain.prof) | 8 |
 | Dublin Core Terms | [`cross-domain.dcterms`](bblocks://ogc.model.cross-domain.dcterms) | 2 |
 | IANA link relations | [`cross-domain.iana-relations`](bblocks://ogc.model.cross-domain.iana-relations) | 1 |
-| Bioschemas | [`ro-crate.vocab.bioschemas`](bblocks://ogc.researchobject.ro-crate.vocab.bioschemas) | 4 |
+| Bioschemas | [`bioschemas.computational-workflow`](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow), [`bioschemas.formal-parameter`](bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter) | 4 |
 | GeoSPARQL | [`cross-domain.geosparql`](bblocks://ogc.model.cross-domain.geosparql) | 2 |
 | CodeMeta | [`cross-domain.codemeta`](bblocks://ogc.model.cross-domain.codemeta) | 10 |
 | PROV | [`ogc-utils.prov`](bblocks://ogc.ogc-utils.prov) | 1 |
@@ -48,14 +49,20 @@ duplicated locally. Only `bioschemas` (a proposed, not-yet-standardized vocabula
 
 The postprocessor assembles a block's JSON-LD context from its own `context.jsonld` plus the
 contexts of every block reachable through `bblocks://` references in its JSON Schema — context
-assembly is driven by schema `$ref` resolution, not a standalone mechanism. None of the vocabulary
-blocks constrain any real data shape (they are pure vocabulary/term-mapping fragments), so each
-carries an unconstrained `type: object` schema whose only purpose is to be a valid `$ref` target.
-The one exception, `ogc.ogc-utils.prov`, is a real structural PROV schema (Agents/Activities/
-Entities mixin) from the `prov-schema` register — it's pulled in for its `wasDerivedFrom` context
-mapping; its structural constraints have no effect here since this block is never itself validated
-against instance data. Applications should use the **assembled context**
-(`build/.../context.jsonld` for this block), not the source files, when processing RO-Crate JSON-LD.
+assembly is driven by schema `$ref` resolution, not a standalone mechanism. Most of the vocabulary
+blocks don't constrain any real data shape (they are pure vocabulary/term-mapping fragments), so
+each carries an unconstrained `type: object` schema whose only purpose is to be a valid `$ref`
+target. Two exceptions:
+- `ogc.ogc-utils.prov`, a real structural PROV schema (Agents/Activities/Entities mixin) from the
+  `prov-schema` register — pulled in for its `wasDerivedFrom` context mapping; its structural
+  constraints have no effect here since this block is never itself validated against instance data.
+- `bioschemas.computational-workflow` / `bioschemas.formal-parameter`, real structural schemas for
+  RO-Crate's Workflow entities (unlike the other local vocab block, `ro-terms`, which is still a
+  pure passthrough) — likewise pulled in here only for their context contributions, not validated
+  as part of this block.
+
+Applications should use the **assembled context** (`build/.../context.jsonld` for this block), not
+the source files, when processing RO-Crate JSON-LD.
 
 ## Why Schema.org must be last in `allOf`
 
@@ -78,6 +85,16 @@ their values as string literals rather than IRI references), inherited correctly
 
 ## Notes on provenance
 
+- Bioschemas itself is inconsistent about which namespace identifies its own terms: its profile
+  documents' companion type-level JSON-LD (e.g.
+  [`ComputationalWorkflow_v1.0-RELEASE.json`](https://github.com/BioSchemas/specifications/blob/main/ComputationalWorkflow/jsonld/type/ComputationalWorkflow_v1.0-RELEASE.json))
+  declares terms under `https://discovery.biothings.io/view/bioschemastypes/...`, while RO-Crate's
+  published context uses `https://bioschemas.org/terms/...` — a different, unlinked namespace. See
+  the "Deviations from the source profile" notes in
+  [`bioschemas.computational-workflow`](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow)
+  and [`bioschemas.formal-parameter`](bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter)
+  for how this was resolved (RO-Crate's namespace wins, since it's this register's equivalence
+  target).
 - The `wfdesc`, `wfprov`, `roterms` and `wf4ever` namespace *prefixes* are declared here (for use by
   RO-Crate profiles that want to mint compact IRIs) but none of their terms are consumed directly by
   the core RO-Crate context — so, unlike the ten vocabulary blocks above, no dependency on an actual
@@ -108,7 +125,8 @@ allOf:
 - $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/prof/schema.yaml
 - $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/dcterms/schema.yaml
 - $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/iana-relations/schema.yaml
-- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml
+- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/schema.yaml
+- $ref: https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.yaml
 - $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/geosparql/schema.yaml
 - $ref: https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/codemeta/schema.yaml
 - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml
@@ -171,10 +189,44 @@ Links to the schema:
     "conformsTo": "dct:conformsTo",
     "Standard": "dct:Standard",
     "cite-as": "relation:cite-as",
-    "ComputationalWorkflow": "https://bioschemas.org/terms/ComputationalWorkflow",
-    "input": "https://bioschemas.org/terms/input",
-    "output": "https://bioschemas.org/terms/output",
-    "FormalParameter": "https://bioschemas.org/terms/FormalParameter",
+    "ComputationalWorkflow": "bioschemas:ComputationalWorkflow",
+    "codeValue": "schema:codeValue",
+    "input": "bioschemas:input",
+    "output": "bioschemas:output",
+    "creativeWorkStatus": "schema:creativeWorkStatus",
+    "documentation": "schema:documentation",
+    "funding": "schema:funding",
+    "maintainer": "schema:maintainer",
+    "softwareRequirements": "schema:softwareRequirements",
+    "conditionsOfAccess": "schema:conditionsOfAccess",
+    "targetProduct": "schema:targetProduct",
+    "programmingLanguage": "schema:programmingLanguage",
+    "runtimePlatform": "schema:runtimePlatform",
+    "alternateName": "schema:alternateName",
+    "description": "schema:description",
+    "identifier": "schema:identifier",
+    "image": "schema:image",
+    "name": "schema:name",
+    "url": "schema:url",
+    "citation": "schema:citation",
+    "contributor": "schema:contributor",
+    "creator": "schema:creator",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "encodingFormat": "schema:encodingFormat",
+    "hasPart": "schema:hasPart",
+    "isBasedOn": "schema:isBasedOn",
+    "keywords": "schema:keywords",
+    "license": "schema:license",
+    "producer": "schema:producer",
+    "publisher": "schema:publisher",
+    "sdPublisher": "schema:sdPublisher",
+    "version": "schema:version",
+    "FormalParameter": "bioschemas:FormalParameter",
+    "additionalType": "schema:additionalType",
+    "defaultValue": "schema:defaultValue",
+    "valueRequired": "schema:valueRequired",
     "Geometry": "geosparql:Geometry",
     "asWKT": "geosparql:asWKT",
     "softwareSuggestions": "https://codemeta.github.io/terms/softwareSuggestions",
@@ -674,7 +726,6 @@ Links to the schema:
       "@id": "prov:mentionOf",
       "@type": "@id"
     },
-    "name": "schema:name",
     "importedFrom": "pav:importedFrom",
     "importedOn": "pav:importedOn",
     "importedBy": "pav:importedBy",
@@ -2191,7 +2242,6 @@ Links to the schema:
     "additionalName": "schema:additionalName",
     "additionalNumberOfGuests": "schema:additionalNumberOfGuests",
     "additionalProperty": "schema:additionalProperty",
-    "additionalType": "schema:additionalType",
     "additionalVariable": "schema:additionalVariable",
     "address": "schema:address",
     "addressCountry": "schema:addressCountry",
@@ -2215,7 +2265,6 @@ Links to the schema:
     "alcoholWarning": "schema:alcoholWarning",
     "algorithm": "schema:algorithm",
     "alignmentType": "schema:alignmentType",
-    "alternateName": "schema:alternateName",
     "alternativeHeadline": "schema:alternativeHeadline",
     "alternativeOf": "schema:alternativeOf",
     "alumni": "schema:alumni",
@@ -2397,7 +2446,6 @@ Links to the schema:
     "children": "schema:children",
     "cholesterolContent": "schema:cholesterolContent",
     "circle": "schema:circle",
-    "citation": "schema:citation",
     "claimInterpreter": "schema:claimInterpreter",
     "claimReviewed": "schema:claimReviewed",
     "clincalPharmacology": "schema:clincalPharmacology",
@@ -2408,7 +2456,6 @@ Links to the schema:
     "code": "schema:code",
     "codeRepository": "schema:codeRepository",
     "codeSampleType": "schema:codeSampleType",
-    "codeValue": "schema:codeValue",
     "codingSystem": "schema:codingSystem",
     "colleague": "schema:colleague",
     "colleagues": "schema:colleagues",
@@ -2426,7 +2473,6 @@ Links to the schema:
     "competitor": "schema:competitor",
     "composer": "schema:composer",
     "comprisedOf": "schema:comprisedOf",
-    "conditionsOfAccess": "schema:conditionsOfAccess",
     "confirmationNumber": "schema:confirmationNumber",
     "connectedTo": "schema:connectedTo",
     "constraintProperty": "schema:constraintProperty",
@@ -2446,7 +2492,6 @@ Links to the schema:
     "contentType": "schema:contentType",
     "contentUrl": "schema:contentUrl",
     "contraindication": "schema:contraindication",
-    "contributor": "schema:contributor",
     "cookTime": "schema:cookTime",
     "cookingMethod": "schema:cookingMethod",
     "copyrightHolder": "schema:copyrightHolder",
@@ -2471,8 +2516,6 @@ Links to the schema:
     "courseWorkload": "schema:courseWorkload",
     "coverageEndTime": "schema:coverageEndTime",
     "coverageStartTime": "schema:coverageStartTime",
-    "creativeWorkStatus": "schema:creativeWorkStatus",
-    "creator": "schema:creator",
     "credentialCategory": "schema:credentialCategory",
     "creditText": "schema:creditText",
     "creditedTo": "schema:creditedTo",
@@ -2505,12 +2548,9 @@ Links to the schema:
     "dataFeedElement": "schema:dataFeedElement",
     "dataset": "schema:dataset",
     "datasetTimeInterval": "schema:datasetTimeInterval",
-    "dateCreated": "schema:dateCreated",
     "dateDeleted": "schema:dateDeleted",
     "dateIssued": "schema:dateIssued",
-    "dateModified": "schema:dateModified",
     "datePosted": "schema:datePosted",
-    "datePublished": "schema:datePublished",
     "dateRead": "schema:dateRead",
     "dateReceived": "schema:dateReceived",
     "dateSent": "schema:dateSent",
@@ -2519,7 +2559,6 @@ Links to the schema:
     "dayOfWeek": "schema:dayOfWeek",
     "deathDate": "schema:deathDate",
     "deathPlace": "schema:deathPlace",
-    "defaultValue": "schema:defaultValue",
     "deliveryAddress": "schema:deliveryAddress",
     "deliveryLeadTime": "schema:deliveryLeadTime",
     "deliveryMethod": "schema:deliveryMethod",
@@ -2536,7 +2575,6 @@ Links to the schema:
     "departureTime": "schema:departureTime",
     "dependencies": "schema:dependencies",
     "depth": "schema:depth",
-    "description": "schema:description",
     "device": "schema:device",
     "diagnosis": "schema:diagnosis",
     "diagram": "schema:diagram",
@@ -2562,7 +2600,6 @@ Links to the schema:
     "distribution": "schema:distribution",
     "diversityPolicy": "schema:diversityPolicy",
     "diversityStaffingReport": "schema:diversityStaffingReport",
-    "documentation": "schema:documentation",
     "doesNotShip": "schema:doesNotShip",
     "domainIncludes": "schema:domainIncludes",
     "domiciledMortgage": "schema:domiciledMortgage",
@@ -2618,7 +2655,6 @@ Links to the schema:
     "encodesBioChemEntity": "schema:encodesBioChemEntity",
     "encodesCreativeWork": "schema:encodesCreativeWork",
     "encoding": "schema:encoding",
-    "encodingFormat": "schema:encodingFormat",
     "encodingType": "schema:encodingType",
     "encodings": "schema:encodings",
     "endDate": "schema:endDate",
@@ -2708,7 +2744,6 @@ Links to the schema:
     "functionalClass": "schema:functionalClass",
     "fundedItem": "schema:fundedItem",
     "funder": "schema:funder",
-    "funding": "schema:funding",
     "game": "schema:game",
     "gameAvailabilityType": "schema:gameAvailabilityType",
     "gameEdition": "schema:gameEdition",
@@ -2778,7 +2813,6 @@ Links to the schema:
     "hasOccupation": "schema:hasOccupation",
     "hasOfferCatalog": "schema:hasOfferCatalog",
     "hasPOS": "schema:hasPOS",
-    "hasPart": "schema:hasPart",
     "hasParticipationOffer": "schema:hasParticipationOffer",
     "hasProductReturnPolicy": "schema:hasProductReturnPolicy",
     "hasRepresentation": "schema:hasRepresentation",
@@ -2819,11 +2853,9 @@ Links to the schema:
     "httpMethod": "schema:httpMethod",
     "iataCode": "schema:iataCode",
     "icaoCode": "schema:icaoCode",
-    "identifier": "schema:identifier",
     "identifyingExam": "schema:identifyingExam",
     "identifyingTest": "schema:identifyingTest",
     "illustrator": "schema:illustrator",
-    "image": "schema:image",
     "imagingTechnique": "schema:imagingTechnique",
     "inAlbum": "schema:inAlbum",
     "inBroadcastLineup": "schema:inBroadcastLineup",
@@ -2878,7 +2910,6 @@ Links to the schema:
     "isAccessibleForFree": "schema:isAccessibleForFree",
     "isAccessoryOrSparePartFor": "schema:isAccessoryOrSparePartFor",
     "isAvailableGenerically": "schema:isAvailableGenerically",
-    "isBasedOn": "schema:isBasedOn",
     "isBasedOnUrl": "schema:isBasedOnUrl",
     "isConsumableFor": "schema:isConsumableFor",
     "isEncodedByBioChemEntity": "schema:isEncodedByBioChemEntity",
@@ -2928,7 +2959,6 @@ Links to the schema:
     "jobStartDate": "schema:jobStartDate",
     "jobTitle": "schema:jobTitle",
     "jurisdiction": "schema:jurisdiction",
-    "keywords": "schema:keywords",
     "knownVehicleDamages": "schema:knownVehicleDamages",
     "knows": "schema:knows",
     "knowsAbout": "schema:knowsAbout",
@@ -2970,7 +3000,6 @@ Links to the schema:
     "lesser": "schema:lesser",
     "lesserOrEqual": "schema:lesserOrEqual",
     "letterer": "schema:letterer",
-    "license": "schema:license",
     "lifeEvent": "schema:lifeEvent",
     "line": "schema:line",
     "linkRelationship": "schema:linkRelationship",
@@ -2994,7 +3023,6 @@ Links to the schema:
     "mainContentOfPage": "schema:mainContentOfPage",
     "mainEntity": "schema:mainEntity",
     "mainEntityOfPage": "schema:mainEntityOfPage",
-    "maintainer": "schema:maintainer",
     "makesOffer": "schema:makesOffer",
     "manufacturer": "schema:manufacturer",
     "map": "schema:map",
@@ -3245,7 +3273,6 @@ Links to the schema:
     "procedureType": "schema:procedureType",
     "processingTime": "schema:processingTime",
     "processorRequirements": "schema:processorRequirements",
-    "producer": "schema:producer",
     "produces": "schema:produces",
     "productGroupID": "schema:productGroupID",
     "productID": "schema:productID",
@@ -3260,7 +3287,6 @@ Links to the schema:
     "programName": "schema:programName",
     "programPrerequisites": "schema:programPrerequisites",
     "programType": "schema:programType",
-    "programmingLanguage": "schema:programmingLanguage",
     "programmingModel": "schema:programmingModel",
     "pronouns": "schema:pronouns",
     "propertyID": "schema:propertyID",
@@ -3276,7 +3302,6 @@ Links to the schema:
     "publicationType": "schema:publicationType",
     "publishedBy": "schema:publishedBy",
     "publishedOn": "schema:publishedOn",
-    "publisher": "schema:publisher",
     "publisherImprint": "schema:publisherImprint",
     "publishingPrinciples": "schema:publishingPrinciples",
     "purchaseDate": "schema:purchaseDate",
@@ -3379,7 +3404,6 @@ Links to the schema:
     "rsvpResponse": "schema:rsvpResponse",
     "runsTo": "schema:runsTo",
     "runtime": "schema:runtime",
-    "runtimePlatform": "schema:runtimePlatform",
     "rxcui": "schema:rxcui",
     "safetyConsideration": "schema:safetyConsideration",
     "salaryCurrency": "schema:salaryCurrency",
@@ -3396,7 +3420,6 @@ Links to the schema:
     "screenshot": "schema:screenshot",
     "sdDatePublished": "schema:sdDatePublished",
     "sdLicense": "schema:sdLicense",
-    "sdPublisher": "schema:sdPublisher",
     "season": "schema:season",
     "seasonNumber": "schema:seasonNumber",
     "seasonalOverride": "schema:seasonalOverride",
@@ -3456,7 +3479,6 @@ Links to the schema:
     "sodiumContent": "schema:sodiumContent",
     "softwareAddOn": "schema:softwareAddOn",
     "softwareHelp": "schema:softwareHelp",
-    "softwareRequirements": "schema:softwareRequirements",
     "softwareVersion": "schema:softwareVersion",
     "source": "schema:source",
     "sourceOrganization": "schema:sourceOrganization",
@@ -3530,7 +3552,6 @@ Links to the schema:
     "targetName": "schema:targetName",
     "targetPlatform": "schema:targetPlatform",
     "targetPopulation": "schema:targetPopulation",
-    "targetProduct": "schema:targetProduct",
     "targetUrl": "schema:targetUrl",
     "taxID": "schema:taxID",
     "taxonRank": "schema:taxonRank",
@@ -3604,7 +3625,6 @@ Links to the schema:
     "unsaturatedFatContent": "schema:unsaturatedFatContent",
     "uploadDate": "schema:uploadDate",
     "upvoteCount": "schema:upvoteCount",
-    "url": "schema:url",
     "urlTemplate": "schema:urlTemplate",
     "usNPI": "schema:usNPI",
     "usageInfo": "schema:usageInfo",
@@ -3625,7 +3645,6 @@ Links to the schema:
     "valueName": "schema:valueName",
     "valuePattern": "schema:valuePattern",
     "valueReference": "schema:valueReference",
-    "valueRequired": "schema:valueRequired",
     "variableMeasured": "schema:variableMeasured",
     "variablesMeasured": "schema:variablesMeasured",
     "variantCover": "schema:variantCover",
@@ -3642,7 +3661,6 @@ Links to the schema:
     "vehicleTransmission": "schema:vehicleTransmission",
     "vendor": "schema:vendor",
     "verificationFactCheckingPolicy": "schema:verificationFactCheckingPolicy",
-    "version": "schema:version",
     "video": "schema:video",
     "videoFormat": "schema:videoFormat",
     "videoFrameSize": "schema:videoFrameSize",
@@ -3701,9 +3719,10 @@ Links to the schema:
     "wf4ever": "http://purl.org/ro/wf4ever#",
     "vann": "http://purl.org/vocab/vann/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "bioschemas": "https://bioschemas.org/terms/",
+    "schema": "http://schema.org/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "oa": "http://www.w3.org/ns/oa#",
-    "schema": "http://schema.org/",
     "@version": 1.1
   }
 }

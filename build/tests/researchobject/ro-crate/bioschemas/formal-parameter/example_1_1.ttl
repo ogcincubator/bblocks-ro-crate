@@ -1,0 +1,7 @@
+@prefix schema1: <http://schema.org/> .
+
+[] schema1:additionalType "http://edamontology.org/data_3707" ;
+    schema1:description "Species count. A tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column split in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance." ;
+    schema1:encodingFormat "http://edamontology.org/format_3752" ;
+    schema1:name "0_Input" .
+

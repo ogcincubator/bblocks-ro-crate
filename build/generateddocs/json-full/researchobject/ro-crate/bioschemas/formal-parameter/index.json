@@ -1,0 +1,67 @@
+
+
+{
+  "itemIdentifier": "ogc.researchobject.ro-crate.bioschemas.formal-parameter",
+  "name": "Bioschemas FormalParameter",
+  "abstract": "An identified variable standing for an actual value consumed or produced by a computational workflow, e.g. a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) input or output.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "schema",
+  "version": "1.0.0",
+  "tags": [
+    "bioschemas",
+    "workflows"
+  ],
+  "sources": [
+    {
+      "title": "Bioschemas FormalParameter profile 1.0-RELEASE",
+      "link": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+    }
+  ],
+  "rdfType": [
+    "https://bioschemas.org/terms/FormalParameter"
+  ],
+  "shaclShapes": {},
+  "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/context.jsonld",
+  "dateOfLastChange": "2026-08-12",
+  "schema": {
+    "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.json"
+  },
+  "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/schema.yaml",
+  "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/context.jsonld",
+  "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/resolvedProperties.json",
+  "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/ogcincubator/bblocks-ro-crate/blob/master/build/tests/researchobject/ro-crate/bioschemas/formal-parameter/",
+  "description": "## Provenance\n\nConverted from the Bioschemas [FormalParameter 1.0-RELEASE](https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE)\nprofile's `$validation` block (JSON Schema draft-07), as published in\n[`BioSchemas/specifications`](https://github.com/BioSchemas/specifications/tree/main/FormalParameter).\n\n## Deviations from the source profile\n\n- The source's non-standard `owl:cardinality` annotations and top-level `required`/`recommended`/\n  `optional` triage are dropped in favor of plain JSON Schema `required`. Per the source profile,\n  `name` is required; `additionalType`, `description`, and `encodingFormat` are recommended but not\n  enforced here; the rest are optional.\n- `encodingFormat` is typed as a URI (or array of URIs) rather than bound to the source's\n  `edmoformats` vocabulary constraint (children of [EDAM](http://edamontology.org/)\n  [`format_1915`](http://edamontology.org/format_1915)) \u2014 enforcing that would need a\n  service-backed vocabulary validator plugin, out of scope for this conversion.\n- Predicate mappings in `context.jsonld` follow the published\n  [RO-Crate 1.3 context](https://w3id.org/ro/crate/1.3/context) term for term: `FormalParameter`\n  maps to `https://bioschemas.org/terms/FormalParameter`; every property (including the\n  Bioschemas-specific `defaultValue`/`valueRequired`/`encodingFormat`, not just the ones that are\n  genuinely Schema.org terms) maps to a plain `http://schema.org/` predicate, exactly as RO-Crate's\n  context does.\n\n  **Note on a Bioschemas inconsistency:** Bioschemas' own companion\n  [type-level JSON-LD](https://github.com/BioSchemas/specifications/blob/main/FormalParameter/jsonld/type/FormalParameter_v1.0-RELEASE.json)\n  declares these same terms under a *different*, non-equivalent namespace \u2014\n  `https://discovery.biothings.io/view/bioschemastypes/...` \u2014 which is neither `owl:sameAs` nor\n  otherwise linked to the `bioschemas.org/terms/...` IRIs RO-Crate's context uses. Since RO-Crate is\n  this register's equivalence target, `bioschemas.org/terms/...` (and plain `schema:` predicates)\n  win here; `bioschemastypes:` is not used. Worth flagging upstream to Bioschemas/RO-Crate rather\n  than silently working around it.\n",
+  "examples": [
+    {
+      "title": "Tabular species-count input parameter",
+      "content": "A `FormalParameter` describing a workflow input, adapted from [WorkflowHub workflow 49](https://workflowhub.eu/workflows/49) \u2014 see [`bioschemas.computational-workflow`](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) for the full workflow this belongs to.\n",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/tests/researchobject/ro-crate/bioschemas/formal-parameter/example_1_1.json",
+          "sizeBytes": 451,
+          "code": "{\n  \"name\": \"0_Input\",\n  \"encodingFormat\": \"http://edamontology.org/format_3752\",\n  \"additionalType\": \"http://edamontology.org/data_3707\",\n  \"description\": \"Species count. A tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column split in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance.\"\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/tests/researchobject/ro-crate/bioschemas/formal-parameter/example_1_1.jsonld",
+          "sizeBytes": 598,
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/context.jsonld\",\n  \"name\": \"0_Input\",\n  \"encodingFormat\": \"http://edamontology.org/format_3752\",\n  \"additionalType\": \"http://edamontology.org/data_3707\",\n  \"description\": \"Species count. A tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column split in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance.\"\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/tests/researchobject/ro-crate/bioschemas/formal-parameter/example_1_1.ttl",
+          "sizeBytes": 521,
+          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:additionalType \"http://edamontology.org/data_3707\" ;\n    schema1:description \"Species count. A tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column split in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance.\" ;\n    schema1:encodingFormat \"http://edamontology.org/format_3752\" ;\n    schema1:name \"0_Input\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Bioschemas FormalParameter\ndescription: An identified variable used to stand for the actual value(s) consumed\n  or produced by a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow)\n  step, per the Bioschemas [FormalParameter](https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE)\n  profile.\ntype: object\nrequired:\n- name\nproperties:\n  name:\n    description: The name of the item.\n    type: string\n    x-jsonld-id: http://schema.org/name\n  identifier:\n    description: Any kind of identifier for this item (e.g. an ISBN, GTIN, or UUID),\n      given as a bare string, a URI, or a full `PropertyValue`.\n    anyOf:\n    - $ref: '#/$defs/propertyValue'\n    - type: array\n      items:\n        $ref: '#/$defs/propertyValue'\n    - type: string\n    - type: array\n      items:\n        type: string\n    - type: string\n      format: uri\n    - type: array\n      items:\n        type: string\n        format: uri\n    x-jsonld-id: http://schema.org/identifier\n  description:\n    description: A description of the item.\n    type: string\n    x-jsonld-id: http://schema.org/description\n  additionalType:\n    description: \"A more specific type for the item, typically from an external vocabulary\n      \\u2014 commonly a term from the [EDAM](http://edamontology.org/) `data` branch\n      for a FormalParameter's data type.\"\n    oneOf:\n    - type: string\n      format: uri\n    - type: array\n      items:\n        type: string\n        format: uri\n    x-jsonld-id: http://schema.org/additionalType\n  defaultValue:\n    description: The default value for the FormalParameter. Commonly only used for\n      inputs.\n    oneOf:\n    - $ref: '#/$defs/thing'\n    - type: string\n    x-jsonld-id: http://schema.org/defaultValue\n  valueRequired:\n    description: Whether the FormalParameter must be specified. Commonly only used\n      for inputs.\n    type: boolean\n    x-jsonld-id: http://schema.org/valueRequired\n  encodingFormat:\n    description: 'URL(s) of the accepted format(s). Strongly recommended: if absent,\n      nothing should be assumed about the FormalParameter''s encoding formats. Recommended\n      vocabulary: the [EDAM](http://edamontology.org/) `format` branch, rooted at\n      [`format_1915`](http://edamontology.org/format_1915).'\n    oneOf:\n    - type: string\n      format: uri\n    - type: array\n      items:\n        type: string\n        format: uri\n    x-jsonld-id: http://schema.org/encodingFormat\n$defs:\n  thing:\n    description: The most generic type of item, per Schema.org's `Thing`.\n    type: object\n    required:\n    - name\n    properties:\n      name:\n        type: string\n        x-jsonld-id: http://schema.org/name\n      identifier:\n        type: string\n        x-jsonld-id: http://schema.org/identifier\n      url:\n        type: string\n        format: uri\n        x-jsonld-id: http://schema.org/url\n      additionalType:\n        type: string\n        format: uri\n        x-jsonld-id: http://schema.org/additionalType\n  propertyValue:\n    description: A property-value pair, per Schema.org's `PropertyValue`.\n    type: object\n    properties:\n      name:\n        type: string\n        x-jsonld-id: http://schema.org/name\n      identifier:\n        type: string\n        x-jsonld-id: http://schema.org/identifier\n      url:\n        type: string\n        format: uri\n        x-jsonld-id: http://schema.org/url\n      additionalType:\n        type: string\n        format: uri\n        x-jsonld-id: http://schema.org/additionalType\n      propertyID:\n        type: string\n        x-jsonld-id: http://schema.org/propertyID\nx-jsonld-extra-terms:\n  FormalParameter: https://bioschemas.org/terms/FormalParameter\nx-jsonld-prefixes:\n  bioschemas: https://bioschemas.org/terms/\n  schema: http://schema.org/\n",
+  "gitRepository": "https://github.com/ogcincubator/bblocks-ro-crate",
+  "gitPath": "_sources/bioschemas/formal-parameter"
+}

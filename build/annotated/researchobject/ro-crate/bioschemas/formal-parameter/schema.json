@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bioschemas FormalParameter",
+  "description": "An identified variable used to stand for the actual value(s) consumed or produced by a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) step, per the Bioschemas [FormalParameter](https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE) profile.",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "description": "The name of the item.",
+      "type": "string",
+      "x-jsonld-id": "http://schema.org/name"
+    },
+    "identifier": {
+      "description": "Any kind of identifier for this item (e.g. an ISBN, GTIN, or UUID), given as a bare string, a URI, or a full `PropertyValue`.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/propertyValue"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/propertyValue"
+          }
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/identifier"
+    },
+    "description": {
+      "description": "A description of the item.",
+      "type": "string",
+      "x-jsonld-id": "http://schema.org/description"
+    },
+    "additionalType": {
+      "description": "A more specific type for the item, typically from an external vocabulary \u2014 commonly a term from the [EDAM](http://edamontology.org/) `data` branch for a FormalParameter's data type.",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/additionalType"
+    },
+    "defaultValue": {
+      "description": "The default value for the FormalParameter. Commonly only used for inputs.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/thing"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/defaultValue"
+    },
+    "valueRequired": {
+      "description": "Whether the FormalParameter must be specified. Commonly only used for inputs.",
+      "type": "boolean",
+      "x-jsonld-id": "http://schema.org/valueRequired"
+    },
+    "encodingFormat": {
+      "description": "URL(s) of the accepted format(s). Strongly recommended: if absent, nothing should be assumed about the FormalParameter's encoding formats. Recommended vocabulary: the [EDAM](http://edamontology.org/) `format` branch, rooted at [`format_1915`](http://edamontology.org/format_1915).",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/encodingFormat"
+    }
+  },
+  "$defs": {
+    "thing": {
+      "description": "The most generic type of item, per Schema.org's `Thing`.",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/name"
+        },
+        "identifier": {
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/identifier"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "x-jsonld-id": "http://schema.org/url"
+        },
+        "additionalType": {
+          "type": "string",
+          "format": "uri",
+          "x-jsonld-id": "http://schema.org/additionalType"
+        }
+      }
+    },
+    "propertyValue": {
+      "description": "A property-value pair, per Schema.org's `PropertyValue`.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/name"
+        },
+        "identifier": {
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/identifier"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "x-jsonld-id": "http://schema.org/url"
+        },
+        "additionalType": {
+          "type": "string",
+          "format": "uri",
+          "x-jsonld-id": "http://schema.org/additionalType"
+        },
+        "propertyID": {
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/propertyID"
+        }
+      }
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "FormalParameter": "https://bioschemas.org/terms/FormalParameter"
+  },
+  "x-jsonld-prefixes": {
+    "bioschemas": "https://bioschemas.org/terms/",
+    "schema": "http://schema.org/"
+  }
+}

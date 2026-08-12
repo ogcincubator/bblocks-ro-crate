@@ -2,7 +2,7 @@
   "name": "RO-Crate Building Blocks",
   "abstract": "Building blocks reconstructing the [RO-Crate 1.3](https://www.researchobject.org/ro-crate/specification/1.3/)\nJSON-LD context from independently reusable vocabulary fragments.\n",
   "description": "This register splits the [RO-Crate 1.3 JSON-LD context](https://w3id.org/ro/crate/1.3/context) into\none building block per source vocabulary (Bioschemas, ro-terms locally; Schema.org, PCDM, PROF,\nDublin Core Terms, IANA link relations, GeoSPARQL, CodeMeta, PROV, PAV imported from the\n[cross-domain model](https://ogcincubator.github.io/cross-domain-model/) register and the\n[PROV schema](https://ogcincubator.github.io/bblock-prov-schema/) register), plus a block that\nassembles them back together with RO-Crate's own term overrides and namespace prefixes. The\nassembled context is equivalent, term for term, to the original. See the\n[`ro-crate.context`](bblocks://ogc.researchobject.ro-crate.context) block for the full composition and\nprovenance notes.\n",
-  "modified": "2026-08-12T13:31:12.949679",
+  "modified": "2026-08-12T13:55:26.110843",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"989dc6251d43604afdfd4b503bdbd417e88a5876",
@@ -23,55 +23,51 @@
   ],
   "bblocks": [
     {
-      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.bioschemas",
-      "name": "Bioschemas vocabulary",
-      "abstract": "Terms proposed by the Bioschemas ComputationalWorkflow and FormalParameter profiles for inclusion in Schema.org, used by RO-Crate to describe [workflows](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html).",
+      "itemIdentifier": "ogc.researchobject.ro-crate.bioschemas.formal-parameter",
+      "name": "Bioschemas FormalParameter",
+      "abstract": "An identified variable standing for an actual value consumed or produced by a computational workflow, e.g. a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) input or output.",
       "status": "under-development",
       "dateTimeAddition": "2026-08-12T00:00:00Z",
-      "itemClass": "model",
+      "itemClass": "schema",
       "version": "1.0.0",
       "tags": [
         "bioschemas",
-        "vocabulary",
         "workflows"
       ],
       "sources": [
         {
-          "title": "Bioschemas ComputationalWorkflow profile 1.0-RELEASE",
-          "link": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-        },
-        {
           "title": "Bioschemas FormalParameter profile 1.0-RELEASE",
           "link": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
-        },
-        {
-          "title": "RO-Crate 1.3 JSON-LD Context",
-          "link": "https://w3id.org/ro/crate/1.3/context"
         }
       ],
+      "rdfType": [
+        "https://bioschemas.org/terms/FormalParameter"
+      ],
       "shaclShapes": {},
-      "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/context.jsonld",
+      "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/context.jsonld",
       "dateOfLastChange": "2026-08-12",
       "schema": {
-        "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml",
-        "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json"
+        "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/schema.json"
       },
-      "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/schema.yaml",
-      "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/context.jsonld",
-      "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/",
+      "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/schema.yaml",
+      "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/context.jsonld",
+      "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/formal-parameter/resolvedProperties.json",
+      "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/formal-parameter/",
       "validationPassed": true,
+      "testOutputs": "https://github.com/ogcincubator/bblocks-ro-crate/blob/master/build/tests/researchobject/ro-crate/bioschemas/formal-parameter/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/bioschemas/index.md"
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/bioschemas/formal-parameter/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/bioschemas/index.json"
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/bioschemas/formal-parameter/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.bioschemas"
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.bioschemas.formal-parameter"
         }
       }
     },
@@ -124,6 +120,62 @@
       }
     },
     {
+      "itemIdentifier": "ogc.researchobject.ro-crate.bioschemas.computational-workflow",
+      "name": "Bioschemas ComputationalWorkflow",
+      "abstract": "A computational workflow \u2014 an orchestrated, repeatable pattern of activity executed by a computational process \u2014 as described by RO-Crate's [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "schema",
+      "version": "1.0.0",
+      "tags": [
+        "bioschemas",
+        "workflows"
+      ],
+      "sources": [
+        {
+          "title": "Bioschemas ComputationalWorkflow profile 1.0-RELEASE",
+          "link": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+        },
+        {
+          "title": "RO-Crate Workflow profile",
+          "link": "https://www.researchobject.org/ro-crate/specification/1.3/workflows.html"
+        }
+      ],
+      "rdfType": [
+        "https://bioschemas.org/terms/ComputationalWorkflow"
+      ],
+      "dependsOn": [
+        "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter"
+      ],
+      "shaclShapes": {},
+      "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/context.jsonld",
+      "dateOfLastChange": "2026-08-12",
+      "schema": {
+        "application/yaml": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/schema.json"
+      },
+      "sourceSchema": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/computational-workflow/schema.yaml",
+      "sourceLdContext": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/computational-workflow/context.jsonld",
+      "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/bioschemas/computational-workflow/resolvedProperties.json",
+      "sourceFiles": "https://ogcincubator.github.io/bblocks-ro-crate/_sources/bioschemas/computational-workflow/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/ogcincubator/bblocks-ro-crate/blob/master/build/tests/researchobject/ro-crate/bioschemas/computational-workflow/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/bioschemas/computational-workflow/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/bioschemas/computational-workflow/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.bioschemas.computational-workflow"
+        }
+      }
+    },
+    {
       "itemIdentifier": "ogc.researchobject.ro-crate.context",
       "name": "RO-Crate JSON-LD Context",
       "abstract": "Assembles the RO-Crate 1.3 JSON-LD context from its constituent vocabulary building blocks, and adds the RO-Crate-specific term overrides (`File`, `Journal`, `HTML`) and namespace prefix declarations. The context produced by this block is equivalent, term for term, to <https://w3id.org/ro/crate/1.3/context>.",
@@ -152,17 +204,18 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.model.cross-domain.pav",
-        "bblocks://ogc.model.cross-domain.dcterms",
-        "bblocks://ogc.model.cross-domain.codemeta",
-        "bblocks://ogc.model.cross-domain.prof",
-        "bblocks://ogc.model.cross-domain.schema-org",
-        "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas",
-        "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms",
+        "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter",
         "bblocks://ogc.ogc-utils.prov",
-        "bblocks://ogc.model.cross-domain.pcdm",
+        "bblocks://ogc.model.cross-domain.dcterms",
+        "bblocks://ogc.model.cross-domain.pav",
+        "bblocks://ogc.model.cross-domain.schema-org",
         "bblocks://ogc.model.cross-domain.iana-relations",
-        "bblocks://ogc.model.cross-domain.geosparql"
+        "bblocks://ogc.model.cross-domain.pcdm",
+        "bblocks://ogc.model.cross-domain.prof",
+        "bblocks://ogc.model.cross-domain.codemeta",
+        "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms",
+        "bblocks://ogc.model.cross-domain.geosparql",
+        "bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow"
       ],
       "shaclShapes": {},
       "ldContext": "https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/context/context.jsonld",
