@@ -2,8 +2,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -20,12 +20,12 @@
     rdfs:label "RO-Crate JSON-LD Context" ;
     dct:abstract "Assembles the RO-Crate 1.3 JSON-LD context from its constituent vocabulary building blocks, and adds the RO-Crate-specific term overrides (`File`, `Journal`, `HTML`) and namespace prefix declarations. The context produced by this block is equivalent, term for term, to <https://w3id.org/ro/crate/1.3/context>."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/context/index.json> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/context/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.context> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/context/index.md> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/context/index.json> ] ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2026-08-12"^^xsd:date ;
     dct:source <https://w3id.org/ro/crate/1.3/context>,
@@ -38,12 +38,12 @@
         "jsonld",
         "ro-crate" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/context/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/context/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/context/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -79,18 +79,18 @@ dct: rdfs:label "DCMI Metadata Terms" .
 
 <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N20259f1bdd374be18c857245699b9684 ;
+    prov:wasAttributedTo _:Nd5eb31c1f45e4db98ce4ac5d925e7570 ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-08-12T08:53:42.313727"^^xsd:dateTime ;
-            prov:startedAtTime "2026-08-12T08:53:42.191925"^^xsd:dateTime ;
+            prov:endedAtTime "2026-08-12T08:56:51.615658"^^xsd:dateTime ;
+            prov:startedAtTime "2026-08-12T08:56:51.450773"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:91d0c3577ed4cdb069002bbafea9b1794964bf31" ;
-                    rdfs:seeAlso <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ],
-                [ a prov:Entity ;
                     dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:N20259f1bdd374be18c857245699b9684 ] .
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:358e5d29299dc6bb9a20f73db0ea81bd1ce02bae" ;
+                    rdfs:seeAlso <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ] ;
+            prov:wasAssociatedWith _:Nd5eb31c1f45e4db98ce4ac5d925e7570 ] .
 
 <https://pcdm.org/2016/04/18/models> rdfs:label "Portland Common Data Model (PCDM)" .
 
@@ -131,16 +131,16 @@ schema: rdfs:label "Schema.org" .
         "vocabulary",
         "workflows" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/bioschemas/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -169,18 +169,18 @@ schema: rdfs:label "Schema.org" .
     dcat:keyword "codemeta",
         "software",
         "vocabulary" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/codemeta/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/codemeta/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -192,12 +192,12 @@ schema: rdfs:label "Schema.org" .
     rdfs:label "Dublin Core Terms vocabulary" ;
     dct:abstract "Dublin Core Terms used by RO-Crate (`conformsTo`, `Standard`)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/dcterms/index.md> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/dcterms/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.dcterms> ] ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.dcterms> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/dcterms/index.md> ] ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2026-08-12"^^xsd:date ;
     dct:source dct:,
@@ -208,18 +208,18 @@ schema: rdfs:label "Schema.org" .
     dcat:keyword "dcterms",
         "dublin-core",
         "vocabulary" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/dcterms/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/dcterms/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/dcterms/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/dcterms/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/dcterms/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -231,12 +231,12 @@ schema: rdfs:label "Schema.org" .
     rdfs:label "GeoSPARQL vocabulary" ;
     dct:abstract "GeoSPARQL terms used by RO-Crate to support geometry on [Place](https://www.researchobject.org/ro-crate/specification/1.3/contextual-entities.html#places) contextual entities (`Geometry`, `asWKT`)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/geosparql/index.json> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/geosparql/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.geosparql> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/geosparql/index.md> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/geosparql/index.json> ] ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2026-08-12"^^xsd:date ;
     dct:source <http://www.opengis.net/ont/geosparql>,
@@ -287,17 +287,17 @@ schema: rdfs:label "Schema.org" .
         "link-relations",
         "vocabulary" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/iana-relations/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/iana-relations/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -326,12 +326,12 @@ schema: rdfs:label "Schema.org" .
         "repository",
         "vocabulary" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -348,12 +348,12 @@ schema: rdfs:label "Schema.org" .
     rdfs:label "PROF vocabulary" ;
     dct:abstract "W3C Profiles Vocabulary (PROF) terms used by RO-Crate to describe [profiles](https://www.researchobject.org/ro-crate/specification/1.3/profiles.html)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.prof> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/prof/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/prof/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.prof> ] ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/prof/index.json> ] ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2026-08-12"^^xsd:date ;
     dct:source <https://w3id.org/ro/crate/1.3/context>,
@@ -364,18 +364,18 @@ schema: rdfs:label "Schema.org" .
     dcat:keyword "prof",
         "profiles",
         "vocabulary" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prof/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/prof/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -387,10 +387,10 @@ schema: rdfs:label "Schema.org" .
     rdfs:label "PROV / PAV vocabulary" ;
     dct:abstract "W3C PROV-O and PAV (Provenance, Authoring and Versioning) terms used by RO-Crate for provenance (`wasDerivedFrom`, `importedFrom`, `importedOn`, `importedBy`, `retrievedFrom`, `retrievedOn`, `retrievedBy`)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/prov-pav/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/prov-pav/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/prov-pav/index.json> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.prov-pav> ] ;
     dct:hasVersion "1.0.0" ;
@@ -405,14 +405,14 @@ schema: rdfs:label "Schema.org" .
         "prov",
         "provenance",
         "vocabulary" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prov-pav/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prov-pav/schema.yaml> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prov-pav/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/prov-pav/schema.json> ;
@@ -428,10 +428,10 @@ schema: rdfs:label "Schema.org" .
     rdfs:label "RO-Crate terms vocabulary" ;
     dct:abstract "The custom RO-Crate community namespace, used in the core context for `localPath`."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-08-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/ro-terms/index.json> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/bblock/ogc.researchobject.ro-crate.vocab.ro-terms> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/json-full/researchobject/ro-crate/vocab/ro-terms/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-ro-crate/build/generateddocs/markdown/researchobject/ro-crate/vocab/ro-terms/index.md> ] ;
     dct:hasVersion "1.0.0" ;
@@ -448,12 +448,12 @@ schema: rdfs:label "Schema.org" .
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-ro-crate/_sources/vocab/ro-terms/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -481,14 +481,14 @@ schema: rdfs:label "Schema.org" .
     skos:topConceptOf <https://ogcincubator.github.io/bblocks-ro-crate/> ;
     dcat:keyword "schema.org",
         "vocabulary" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/schema-org/context.jsonld> ;
             prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ro-crate/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.json> ;
@@ -514,7 +514,7 @@ equivalent, term for term, to the original. See the
 [`ro-crate.context`](bblocks://ogc.researchobject.ro-crate.context) block for the full composition and
 provenance notes.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-08-12T08:53:39.039296"^^xsd:dateTime ;
+    dct:modified "2026-08-12T08:56:48.283509"^^xsd:dateTime ;
     owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
     skos:hasTopConcept <bblocks://ogc.researchobject.ro-crate.context>,
         <bblocks://ogc.researchobject.ro-crate.vocab.bioschemas>,
@@ -530,20 +530,20 @@ provenance notes.
     skos:prefLabel "Building Blocks - RO-Crate Building Blocks" ;
     prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.ttl> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.ttl> ],
         [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.jsonld> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ] ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://ogcincubator.github.io/bblocks-ro-crate/build/register.json> ] ;
     foaf:homepage <https://ogcincubator.github.io/bblocks-ro-crate/> ;
     bblocks:hasValidationReport <https://ogcincubator.github.io/bblocks-ro-crate/build/tests/report.html> .
 
-_:N20259f1bdd374be18c857245699b9684 a prov:Agent,
+_:Nd5eb31c1f45e4db98ce4ac5d925e7570 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.32.dev1+g4f7b75c19" ;

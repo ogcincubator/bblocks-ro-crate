@@ -6,67 +6,11 @@
     "result": true
   },
   "bblocks": {
-    "ogc.researchobject.ro-crate.vocab.schema-org": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.schema-org - Schema.org vocabulary",
-      "bblockName": "Schema.org vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.schema-org",
-      "generated": "2026-08-12T08:53:42.067606+00:00",
-      "result": true,
-      "items": [],
-      "globalErrors": {},
-      "counts": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0
-      }
-    },
-    "ogc.researchobject.ro-crate.vocab.ro-terms": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.ro-terms - RO-Crate terms vocabulary",
-      "bblockName": "RO-Crate terms vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.ro-terms",
-      "generated": "2026-08-12T08:53:42.072982+00:00",
-      "result": true,
-      "items": [],
-      "globalErrors": {},
-      "counts": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0
-      }
-    },
-    "ogc.researchobject.ro-crate.vocab.iana-relations": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.iana-relations - IANA link relations vocabulary",
-      "bblockName": "IANA link relations vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.iana-relations",
-      "generated": "2026-08-12T08:53:42.077928+00:00",
-      "result": true,
-      "items": [],
-      "globalErrors": {},
-      "counts": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0
-      }
-    },
     "ogc.researchobject.ro-crate.vocab.prov-pav": {
       "title": "Validation report for ogc.researchobject.ro-crate.vocab.prov-pav - PROV / PAV vocabulary",
       "bblockName": "PROV / PAV vocabulary",
       "bblockId": "ogc.researchobject.ro-crate.vocab.prov-pav",
-      "generated": "2026-08-12T08:53:42.082876+00:00",
-      "result": true,
-      "items": [],
-      "globalErrors": {},
-      "counts": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0
-      }
-    },
-    "ogc.researchobject.ro-crate.vocab.geosparql": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.geosparql - GeoSPARQL vocabulary",
-      "bblockName": "GeoSPARQL vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.geosparql",
-      "generated": "2026-08-12T08:53:42.087722+00:00",
+      "generated": "2026-08-12T08:56:51.291902+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -80,7 +24,35 @@
       "title": "Validation report for ogc.researchobject.ro-crate.vocab.dcterms - Dublin Core Terms vocabulary",
       "bblockName": "Dublin Core Terms vocabulary",
       "bblockId": "ogc.researchobject.ro-crate.vocab.dcterms",
-      "generated": "2026-08-12T08:53:42.092536+00:00",
+      "generated": "2026-08-12T08:56:51.297092+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.researchobject.ro-crate.vocab.schema-org": {
+      "title": "Validation report for ogc.researchobject.ro-crate.vocab.schema-org - Schema.org vocabulary",
+      "bblockName": "Schema.org vocabulary",
+      "bblockId": "ogc.researchobject.ro-crate.vocab.schema-org",
+      "generated": "2026-08-12T08:56:51.341469+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.researchobject.ro-crate.vocab.iana-relations": {
+      "title": "Validation report for ogc.researchobject.ro-crate.vocab.iana-relations - IANA link relations vocabulary",
+      "bblockName": "IANA link relations vocabulary",
+      "bblockId": "ogc.researchobject.ro-crate.vocab.iana-relations",
+      "generated": "2026-08-12T08:56:51.346406+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -94,35 +66,7 @@
       "title": "Validation report for ogc.researchobject.ro-crate.vocab.pcdm - PCDM vocabulary",
       "bblockName": "PCDM vocabulary",
       "bblockId": "ogc.researchobject.ro-crate.vocab.pcdm",
-      "generated": "2026-08-12T08:53:42.097603+00:00",
-      "result": true,
-      "items": [],
-      "globalErrors": {},
-      "counts": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0
-      }
-    },
-    "ogc.researchobject.ro-crate.vocab.codemeta": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.codemeta - CodeMeta vocabulary",
-      "bblockName": "CodeMeta vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.codemeta",
-      "generated": "2026-08-12T08:53:42.102487+00:00",
-      "result": true,
-      "items": [],
-      "globalErrors": {},
-      "counts": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0
-      }
-    },
-    "ogc.researchobject.ro-crate.vocab.bioschemas": {
-      "title": "Validation report for ogc.researchobject.ro-crate.vocab.bioschemas - Bioschemas vocabulary",
-      "bblockName": "Bioschemas vocabulary",
-      "bblockId": "ogc.researchobject.ro-crate.vocab.bioschemas",
-      "generated": "2026-08-12T08:53:42.107376+00:00",
+      "generated": "2026-08-12T08:56:51.352190+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -136,7 +80,63 @@
       "title": "Validation report for ogc.researchobject.ro-crate.vocab.prof - PROF vocabulary",
       "bblockName": "PROF vocabulary",
       "bblockId": "ogc.researchobject.ro-crate.vocab.prof",
-      "generated": "2026-08-12T08:53:42.112321+00:00",
+      "generated": "2026-08-12T08:56:51.357326+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.researchobject.ro-crate.vocab.codemeta": {
+      "title": "Validation report for ogc.researchobject.ro-crate.vocab.codemeta - CodeMeta vocabulary",
+      "bblockName": "CodeMeta vocabulary",
+      "bblockId": "ogc.researchobject.ro-crate.vocab.codemeta",
+      "generated": "2026-08-12T08:56:51.362281+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.researchobject.ro-crate.vocab.geosparql": {
+      "title": "Validation report for ogc.researchobject.ro-crate.vocab.geosparql - GeoSPARQL vocabulary",
+      "bblockName": "GeoSPARQL vocabulary",
+      "bblockId": "ogc.researchobject.ro-crate.vocab.geosparql",
+      "generated": "2026-08-12T08:56:51.367089+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.researchobject.ro-crate.vocab.ro-terms": {
+      "title": "Validation report for ogc.researchobject.ro-crate.vocab.ro-terms - RO-Crate terms vocabulary",
+      "bblockName": "RO-Crate terms vocabulary",
+      "bblockId": "ogc.researchobject.ro-crate.vocab.ro-terms",
+      "generated": "2026-08-12T08:56:51.371822+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.researchobject.ro-crate.vocab.bioschemas": {
+      "title": "Validation report for ogc.researchobject.ro-crate.vocab.bioschemas - Bioschemas vocabulary",
+      "bblockName": "Bioschemas vocabulary",
+      "bblockId": "ogc.researchobject.ro-crate.vocab.bioschemas",
+      "generated": "2026-08-12T08:56:51.376675+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -150,7 +150,7 @@
       "title": "Validation report for ogc.researchobject.ro-crate.context - RO-Crate JSON-LD Context",
       "bblockName": "RO-Crate JSON-LD Context",
       "bblockId": "ogc.researchobject.ro-crate.context",
-      "generated": "2026-08-12T08:53:42.167610+00:00",
+      "generated": "2026-08-12T08:56:51.424895+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
