@@ -1,0 +1,439 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+title: Bioschemas ComputationalWorkflow
+description: >-
+  An orchestrated and repeatable pattern of activity, executed by a computational process, per the
+  Bioschemas [ComputationalWorkflow](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE)
+  profile.
+x-jsonld-context: context.jsonld
+type: object
+required:
+  - input
+  - output
+  - programmingLanguage
+  - name
+  - url
+  - creator
+  - dateCreated
+  - license
+  - sdPublisher
+  - version
+properties:
+  input:
+    description: An input required to use the computational workflow (e.g. an Excel spreadsheet, a BAM file).
+    oneOf:
+      - "$ref": "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter"
+      - type: array
+        items:
+          "$ref": "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter"
+  output:
+    description: An output produced by the workflow.
+    oneOf:
+      - "$ref": "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter"
+      - type: array
+        items:
+          "$ref": "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter"
+  creativeWorkStatus:
+    description: >-
+      The status of the workflow in terms of its stage in a lifecycle, e.g. Incomplete, Draft,
+      Published, Obsolete.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+      - "$ref": "#/$defs/definedTerm"
+      - type: array
+        items:
+          "$ref": "#/$defs/definedTerm"
+  documentation:
+    description: Documentation describing the ComputationalWorkflow and its use.
+    anyOf:
+      - type: string
+        format: uri
+      - type: array
+        items:
+          type: string
+          format: uri
+      - "$ref": "#/$defs/creativeWork"
+      - type: array
+        items:
+          "$ref": "#/$defs/creativeWork"
+  funding:
+    description: The funding for the workflow.
+    oneOf:
+      - "$ref": "#/$defs/grant"
+      - type: array
+        items:
+          "$ref": "#/$defs/grant"
+  maintainer:
+    description: >-
+      The Person or Organization that manages contributions to, and/or publication of, the
+      workflow.
+    anyOf:
+      - "$ref": "#/$defs/person"
+      - type: array
+        items:
+          "$ref": "#/$defs/person"
+      - "$ref": "#/$defs/organization"
+      - type: array
+        items:
+          "$ref": "#/$defs/organization"
+  softwareRequirements:
+    description: >-
+      Component dependency requirements for the workflow (runtime environments, shared libraries
+      not bundled with it).
+    anyOf:
+      - type: string
+        format: uri
+      - type: array
+        items:
+          type: string
+          format: uri
+      - type: string
+      - type: array
+        items:
+          type: string
+  conditionsOfAccess:
+    description: Conditions that affect the availability of, or method(s) of access to, the workflow.
+    type: string
+  targetProduct:
+    description: >-
+      Target operating system(s) / product(s) to which the workflow applies.
+    oneOf:
+      - "$ref": "#/$defs/softwareApplication"
+      - type: array
+        items:
+          "$ref": "#/$defs/softwareApplication"
+  programmingLanguage:
+    description: The computer programming (or workflow) language.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+      - "$ref": "#/$defs/computerLanguage"
+      - type: array
+        items:
+          "$ref": "#/$defs/computerLanguage"
+  runtimePlatform:
+    description: Runtime platform or script interpreter dependencies (e.g. Java 1, Python 2.3).
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  alternateName:
+    description: An alias for the workflow.
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  description:
+    description: A description of the workflow.
+    type: string
+  identifier:
+    description: Any kind of identifier for the workflow (e.g. an ISBN, GTIN, or UUID).
+    anyOf:
+      - "$ref": "#/$defs/propertyValue"
+      - type: array
+        items:
+          "$ref": "#/$defs/propertyValue"
+      - type: string
+      - type: array
+        items:
+          type: string
+      - type: string
+        format: uri
+      - type: array
+        items:
+          type: string
+          format: uri
+  image:
+    description: An image of the workflow.
+    oneOf:
+      - type: string
+        format: uri
+      - type: array
+        items:
+          type: string
+          format: uri
+      - "$ref": "#/$defs/imageObject"
+      - type: array
+        items:
+          "$ref": "#/$defs/imageObject"
+  name:
+    description: The name of the workflow.
+    type: string
+  url:
+    description: URL of the workflow.
+    type: string
+    format: uri
+  citation:
+    description: A citation or reference to another creative work related to the workflow.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+      - "$ref": "#/$defs/creativeWork"
+      - type: array
+        items:
+          "$ref": "#/$defs/creativeWork"
+  contributor:
+    description: A secondary contributor to the workflow.
+    anyOf:
+      - "$ref": "#/$defs/person"
+      - type: array
+        items:
+          "$ref": "#/$defs/person"
+      - "$ref": "#/$defs/organization"
+      - type: array
+        items:
+          "$ref": "#/$defs/organization"
+  creator:
+    description: The creator/author of the workflow.
+    anyOf:
+      - "$ref": "#/$defs/person"
+      - type: array
+        items:
+          "$ref": "#/$defs/person"
+      - "$ref": "#/$defs/organization"
+      - type: array
+        items:
+          "$ref": "#/$defs/organization"
+  dateCreated:
+    description: The date on which the workflow was created.
+    type: string
+    format: date
+  dateModified:
+    description: The date on which the workflow was most recently modified.
+    type: string
+    format: date
+  datePublished:
+    description: Date of first publication of the workflow.
+    type: string
+    format: date
+  encodingFormat:
+    description: >-
+      Media type of the workflow, typically expressed as a MIME type (e.g. `application/zip`).
+    anyOf:
+      - type: string
+        format: uri
+      - type: array
+        items:
+          type: string
+          format: uri
+      - type: string
+      - type: array
+        items:
+          type: string
+  hasPart:
+    description: A resource that is part of the workflow.
+    oneOf:
+      - "$ref": "#/$defs/creativeWork"
+      - type: array
+        items:
+          "$ref": "#/$defs/creativeWork"
+  isBasedOn:
+    description: A resource from which the workflow is derived, or of which it is a modification.
+    oneOf:
+      - "$ref": "#/$defs/product"
+      - "$ref": "#/$defs/creativeWork"
+      - type: string
+        format: uri
+  keywords:
+    description: Keywords or tags describing the workflow.
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  license:
+    description: A license document that applies to the workflow, typically indicated by URL.
+    anyOf:
+      - type: string
+        format: uri
+      - type: array
+        items:
+          type: string
+          format: uri
+      - "$ref": "#/$defs/creativeWork"
+      - type: array
+        items:
+          "$ref": "#/$defs/creativeWork"
+  producer:
+    description: The person or organization who produced the workflow.
+    anyOf:
+      - "$ref": "#/$defs/person"
+      - type: array
+        items:
+          "$ref": "#/$defs/person"
+      - "$ref": "#/$defs/organization"
+      - type: array
+        items:
+          "$ref": "#/$defs/organization"
+  publisher:
+    description: The publisher of the workflow.
+    anyOf:
+      - "$ref": "#/$defs/person"
+      - type: array
+        items:
+          "$ref": "#/$defs/person"
+      - "$ref": "#/$defs/organization"
+      - type: array
+        items:
+          "$ref": "#/$defs/organization"
+  sdPublisher:
+    description: >-
+      The party responsible for generating and publishing the current structured data markup for
+      the workflow.
+    anyOf:
+      - "$ref": "#/$defs/person"
+      - type: array
+        items:
+          "$ref": "#/$defs/person"
+      - "$ref": "#/$defs/organization"
+      - type: array
+        items:
+          "$ref": "#/$defs/organization"
+  version:
+    description: The version of the workflow.
+    oneOf:
+      - type: string
+      - type: number
+"$defs":
+  grant:
+    type: object
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      url:
+        type: string
+        format: uri
+      sponsor:
+        oneOf:
+          - "$ref": "#/$defs/organization"
+          - "$ref": "#/$defs/person"
+      identifier:
+        type: string
+  person:
+    type: object
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      url:
+        type: string
+        format: uri
+      affiliation:
+        "$ref": "#/$defs/organization"
+  organization:
+    type: object
+    properties:
+      name:
+        type: string
+      alternateName:
+        type: string
+      identifier:
+        type: string
+      url:
+        type: string
+        format: uri
+  softwareApplication:
+    type: object
+    properties:
+      name:
+        type: string
+      url:
+        type: string
+        format: uri
+  propertyValue:
+    type: object
+    required:
+      - name
+      - value
+    properties:
+      name:
+        type: string
+      value:
+        oneOf:
+          - type: string
+          - type: boolean
+          - type: number
+      identifier:
+        type: string
+      valueReference:
+        oneOf:
+          - "$ref": "#/$defs/categoryCode"
+          - type: array
+            items:
+              "$ref": "#/$defs/categoryCode"
+      unitCode:
+        anyOf:
+          - type: string
+          - type: string
+            format: uri
+      unitText:
+        type: string
+  categoryCode:
+    type: object
+    required:
+      - name
+      - codeValue
+      - url
+    properties:
+      name:
+        type: string
+      codeValue:
+        type: string
+      url:
+        type: string
+  creativeWork:
+    type: object
+    properties:
+      name:
+        type: string
+      identifier:
+        type: string
+      url:
+        type: string
+        format: uri
+  product:
+    type: object
+    properties:
+      name:
+        type: string
+      identifier:
+        type: string
+      url:
+        type: string
+        format: uri
+  definedTerm:
+    type: object
+    properties:
+      name:
+        type: string
+      identifier:
+        type: string
+      url:
+        type: string
+        format: uri
+      termCode:
+        type: string
+  computerLanguage:
+    type: object
+    properties:
+      name:
+        type: string
+  imageObject:
+    type: object
+    properties:
+      name:
+        type: string
+      url:
+        type: string
+        format: uri

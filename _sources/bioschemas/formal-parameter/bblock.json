@@ -1,0 +1,21 @@
+{
+  "name": "Bioschemas FormalParameter",
+  "abstract": "An identified variable standing for an actual value consumed or produced by a computational workflow, e.g. a [ComputationalWorkflow](bblocks://ogc.researchobject.ro-crate.bioschemas.computational-workflow) input or output.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "schema",
+  "version": "1.0.0",
+  "tags": [
+    "bioschemas",
+    "workflows"
+  ],
+  "sources": [
+    {
+      "title": "Bioschemas FormalParameter profile 1.0-RELEASE",
+      "link": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+    }
+  ],
+  "rdfType": [
+    "https://bioschemas.org/terms/FormalParameter"
+  ]
+}

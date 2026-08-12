@@ -28,8 +28,9 @@ locally:
 - `cross-domain.codemeta` — CodeMeta 3.0
 - `cross-domain.pav` — PAV (Provenance, Authoring and Versioning)
 - `ogc-utils.prov` — PROV-O (from the PROV schema register)
-- `vocab/bioschemas` — Bioschemas ComputationalWorkflow / FormalParameter (local: not yet a
-  standard, kept out of the cross-domain register per policy)
+- `bioschemas/computational-workflow`, `bioschemas/formal-parameter` — real structural schemas for
+  Bioschemas' ComputationalWorkflow / FormalParameter profiles (local: not yet a standard, kept out
+  of the cross-domain register per policy)
 - `vocab/ro-terms` — the RO-Crate community namespace (local: RO-Crate's own, not a shared standard)
 
 ...and a `context` block that assembles all of them plus RO-Crate's own overrides (`File`,
@@ -37,12 +38,15 @@ locally:
 [`_sources/context/description.md`](_sources/context/description.md) for the full composition table
 and provenance notes.
 
-Each of the imported vocabulary blocks is vocabulary-only — a JSON-LD `context.jsonld`, with no
+Most of the imported vocabulary blocks are vocabulary-only — a JSON-LD `context.jsonld`, with no
 meaningful JSON Schema of its own (the schema is an unconstrained placeholder, present only so the
-postprocessor's `$ref`-driven context assembly can pick it up); `ogc-utils.prov` is the one
-exception, a real structural PROV schema pulled in for its context mapping only. RO-Crate's
-structural rules for entities (Root Data Entity, Data Entities, Contextual Entities, etc.) are not
-modeled here yet — this register currently covers vocabulary reconstruction only.
+postprocessor's `$ref`-driven context assembly can pick it up). Two exceptions carry real structural
+schemas, pulled in here only for their context mapping (their own validation isn't exercised by the
+`context` block): `ogc-utils.prov` (Agents/Activities/Entities mixin) and the two `bioschemas`
+blocks (ComputationalWorkflow/FormalParameter, converted from Bioschemas' own `$validation` JSON
+Schema — see their `description.md` for the conversion notes). RO-Crate's other structural rules for
+entities (Root Data Entity, Data Entities, Contextual Entities, etc.) are not modeled here yet — this
+register otherwise covers vocabulary reconstruction only.
 
 ## Building and viewing locally
 

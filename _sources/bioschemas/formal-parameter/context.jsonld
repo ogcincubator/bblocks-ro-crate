@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "bioschemas": "https://bioschemas.org/terms/",
+    "FormalParameter": "bioschemas:FormalParameter",
+    "name": "schema:name",
+    "identifier": "schema:identifier",
+    "description": "schema:description",
+    "additionalType": "schema:additionalType",
+    "defaultValue": "schema:defaultValue",
+    "valueRequired": "schema:valueRequired",
+    "encodingFormat": "schema:encodingFormat",
+    "url": "schema:url",
+    "propertyID": "schema:propertyID"
+  }
+}

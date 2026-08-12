@@ -1,0 +1,28 @@
+{
+  "name": "Bioschemas ComputationalWorkflow",
+  "abstract": "A computational workflow — an orchestrated, repeatable pattern of activity executed by a computational process — as described by RO-Crate's [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "schema",
+  "version": "1.0.0",
+  "tags": [
+    "bioschemas",
+    "workflows"
+  ],
+  "sources": [
+    {
+      "title": "Bioschemas ComputationalWorkflow profile 1.0-RELEASE",
+      "link": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+    },
+    {
+      "title": "RO-Crate Workflow profile",
+      "link": "https://www.researchobject.org/ro-crate/specification/1.3/workflows.html"
+    }
+  ],
+  "rdfType": [
+    "https://bioschemas.org/terms/ComputationalWorkflow"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.researchobject.ro-crate.bioschemas.formal-parameter"
+  ]
+}
