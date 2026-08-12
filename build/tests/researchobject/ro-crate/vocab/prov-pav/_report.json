@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.researchobject.ro-crate.vocab.prov-pav - PROV / PAV vocabulary",
+  "bblockName": "PROV / PAV vocabulary",
+  "bblockId": "ogc.researchobject.ro-crate.vocab.prov-pav",
+  "generated": "2026-08-12T08:52:29.039341+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "@context": {
+    "hasArtifact": "http://www.w3.org/ns/dx/prof/hasArtifact",
+    "hasResource": "http://www.w3.org/ns/dx/prof/hasResource",
+    "hasRole": "http://www.w3.org/ns/dx/prof/hasRole",
+    "hasToken": "http://www.w3.org/ns/dx/prof/hasToken",
+    "isProfileOf": "http://www.w3.org/ns/dx/prof/isProfileOf",
+    "ResourceDescriptor": "http://www.w3.org/ns/dx/prof/ResourceDescriptor",
+    "ResourceRole": "http://www.w3.org/ns/dx/prof/ResourceRole",
+    "Profile": "http://www.w3.org/ns/dx/prof/Profile",
+    "@version": 1.1
+  }
+}

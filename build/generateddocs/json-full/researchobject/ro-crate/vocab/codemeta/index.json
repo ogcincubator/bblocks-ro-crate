@@ -1,0 +1,40 @@
+
+
+{
+  "itemIdentifier": "ogc.researchobject.ro-crate.vocab.codemeta",
+  "name": "CodeMeta vocabulary",
+  "abstract": "CodeMeta 3.0 terms used by RO-Crate to describe software (`buildInstructions`, `developmentStatus`, `continuousIntegration`, `embargoEndDate`, `hasSourceCode`, `isSourceCodeOf`, `issueTracker`, `readme`, `referencePublication`, `softwareSuggestions`).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "model",
+  "version": "1.0.0",
+  "tags": [
+    "codemeta",
+    "vocabulary",
+    "software"
+  ],
+  "sources": [
+    {
+      "title": "CodeMeta 3.0",
+      "link": "https://w3id.org/codemeta/3.0"
+    },
+    {
+      "title": "RO-Crate 1.3 JSON-LD Context",
+      "link": "https://w3id.org/ro/crate/1.3/context"
+    }
+  ],
+  "shaclShapes": {},
+  "ldContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/context.jsonld",
+  "dateOfLastChange": "2026-08-12",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/schema.yaml",
+  "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/context.jsonld",
+  "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/",
+  "validationPassed": true,
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: CodeMeta vocabulary\ndescription: 'Unconstrained carrier schema: this block''s content is its JSON-LD context,\n  not a data shape. The schema exists only so other blocks can `$ref` it via `bblocks://`\n  and inherit the context.'\ntype: object\nx-jsonld-extra-terms:\n  softwareSuggestions: https://codemeta.github.io/terms/softwareSuggestions\n  continuousIntegration: https://codemeta.github.io/terms/continuousIntegration\n  buildInstructions: https://codemeta.github.io/terms/buildInstructions\n  developmentStatus: https://codemeta.github.io/terms/developmentStatus\n  embargoEndDate: https://codemeta.github.io/terms/embargoEndDate\n  readme: https://codemeta.github.io/terms/readme\n  issueTracker: https://codemeta.github.io/terms/issueTracker\n  referencePublication: https://codemeta.github.io/terms/referencePublication\n  hasSourceCode: https://codemeta.github.io/terms/hasSourceCode\n  isSourceCodeOf: https://codemeta.github.io/terms/isSourceCodeOf\n",
+  "gitRepository": "https://github.com/ogcincubator/bblocks-ro-crate",
+  "gitPath": "_sources/vocab/codemeta"
+}

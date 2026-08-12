@@ -1,0 +1,1180 @@
+{
+  "@context": [
+    {
+      "@base": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined"
+    },
+    {
+      "bblocks": "https://www.opengis.net/def/bblocks/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "dct": "http://purl.org/dc/terms/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "prof": "http://www.w3.org/ns/dx/prof/",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "modspec": "http://www.opengis.net/def/ont/modspec/",
+      "void": "http://rdfs.org/ns/void#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "role": "http://www.w3.org/ns/dx/prof/role/",
+      "shacl": "https://www.w3.org/TR/shacl/",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "baseURL": "@id",
+      "name": "rdfs:label",
+      "abstract": {
+        "@id": "dct:abstract",
+        "@type": "https://www.w3.org/ns/iana/media-types/text/markdown"
+      },
+      "description": {
+        "@id": "dct:description",
+        "@type": "https://www.w3.org/ns/iana/media-types/text/markdown"
+      },
+      "status": {
+        "@id": "bblocks:status",
+        "@type": "@id",
+        "@context": {
+          "@base": "http://www.opengis.net/def/status/"
+        }
+      },
+      "dateTimeAddition": {
+        "@id": "dct:created",
+        "@type": "xsd:dateTime"
+      },
+      "version": "dct:hasVersion",
+      "dateOfLastChange": {
+        "@id": "dct:modified",
+        "@type": "xsd:date"
+      },
+      "modified": {
+        "@id": "dct:modified",
+        "@type": "xsd:dateTime"
+      },
+      "scope": {
+        "@id": "bblocks:scope",
+        "@type": "@id",
+        "@context": {
+          "@base": "http://www.opengis.net/def/bblocks/scope/"
+        }
+      },
+      "sources": {
+        "@id": "dct:source",
+        "@context": {
+          "title": "rdfs:label",
+          "link": "@id"
+        }
+      },
+      "schema": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "ldContext": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "sourceLdContext": {
+        "@id": "bblocks:hasSourceJsonLdContext",
+        "@type": "@id"
+      },
+      "documentation": {
+        "@id": "dct:description",
+        "@type": "@id",
+        "@container": "@index",
+        "@index": "dct:identifier",
+        "@context": {
+          "mediatype": "dct:format",
+          "url": {
+            "@id": "rdfs:isDefinedBy",
+            "@type": "@id"
+          }
+        }
+      },
+      "rdfs:isDefinedBy": {
+        "@type": "@id"
+      },
+      "hasConcepts": {
+        "@reverse": "skos:inScheme"
+      },
+      "dependsOn": {
+        "@id": "bblocks:dependsOn",
+        "@type": "@id"
+      },
+      "isProfileOf": {
+        "@id": "prof:isProfileOf",
+        "@type": "@id"
+      },
+      "tags": "dcat:keyword",
+      "shaclShapes": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "validationReport": {
+        "@id": "bblocks:hasValidationReport",
+        "@type": "@id"
+      },
+      "validationPassed": "bblocks:validationPassed",
+      "imports": {
+        "@id": "owl:imports",
+        "@type": "@id"
+      },
+      "conformanceClasses": {
+        "@id": "modspec:class",
+        "@type": "@id"
+      },
+      "requirementClasses": {
+        "@id": "modspec:requirementsClass",
+        "@type": "@id"
+      },
+      "sparqlEndpoint": {
+        "@id": "void:sparqlEndpoint",
+        "@type": "@id"
+      },
+      "viewerURL": {
+        "@id": "foaf:homepage",
+        "@type": "@id"
+      },
+      "dct:conformsTo": {
+        "@type": "@id"
+      },
+      "prof:hasRole": {
+        "@type": "@id"
+      },
+      "prof:hasArtifact": {
+        "@type": "@id"
+      },
+      "rdfs:seeAlso": {
+        "@type": "@id"
+      },
+      "ontology": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "rdfData": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "links": {
+        "@id": "prof:hasResource",
+        "@context": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
+      },
+      "concept": {
+        "@id": "skos:closeMatch",
+        "@type": "@id"
+      },
+      "rdfType": {
+        "@id": "rdfs:subClassOf",
+        "@type": "@id"
+      },
+      "resources": {
+        "@id": "prof:hasResource",
+        "@context": {
+          "role": {
+            "@id": "prof:hasRole",
+            "@type": "@id"
+          },
+          "constraints": "role:constraints",
+          "example": "role:example",
+          "guidance": "role:guidance",
+          "mapping": "role:mapping",
+          "schema": "role:schema",
+          "specification": "role:specification",
+          "validation": "role:validation",
+          "vocabulary": "role:vocabulary",
+          "data": "role:data",
+          "ref": {
+            "@id": "prof:hasArtifact",
+            "@type": "@id"
+          },
+          "format": "dct:format",
+          "conformsTo": {
+            "@id": "dct:conformsTo",
+            "@type": "@id"
+          }
+        }
+      }
+    }
+  ],
+  "name": "Building Blocks - RO-Crate Building Blocks",
+  "abstract": "Building blocks reconstructing the [RO-Crate 1.3](https://www.researchobject.org/ro-crate/specification/1.3/)\nJSON-LD context from independently reusable vocabulary fragments.\n",
+  "description": "This register splits the [RO-Crate 1.3 JSON-LD context](https://w3id.org/ro/crate/1.3/context) into\none building block per source vocabulary (Schema.org, PCDM, PROF, Dublin Core Terms, IANA link\nrelations, Bioschemas, GeoSPARQL, CodeMeta, PROV/PAV, ro-terms), plus a block that assembles them\nback together with RO-Crate's own term overrides and namespace prefixes. The assembled context is\nequivalent, term for term, to the original. See the\n[`ro-crate.context`](bblocks://ogc.researchobject.ro-crate.context) block for the full composition and\nprovenance notes.\n",
+  "modified": "2026-08-12T08:52:25.832278",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"989dc6251d43604afdfd4b503bdbd417e88a5876",
+      "shortCommitId": "\"989dc6",
+      "date": "2026-08-06T10:55:48+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/ogcincubator/bblocks-ro-crate",
+  "gitHubRepository": "https://github.com/ogcincubator/bblocks-ro-crate/blob/master/",
+  "baseURL": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/",
+  "viewerURL": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/",
+  "validationReport": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/tests/report.html",
+  "validationReportJson": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "remoteCacheDir": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ],
+  "@type": [
+    "skos:ConceptScheme",
+    "dcat:Catalog",
+    "bblocks:BBlocksRegister"
+  ],
+  "skos:prefLabel": "Building Blocks - RO-Crate Building Blocks",
+  "hasConcepts": [
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.prof",
+      "name": "PROF vocabulary",
+      "abstract": "W3C Profiles Vocabulary (PROF) terms used by RO-Crate to describe [profiles](https://www.researchobject.org/ro-crate/specification/1.3/profiles.html).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "prof",
+        "vocabulary",
+        "profiles"
+      ],
+      "sources": [
+        {
+          "title": "Profiles Vocabulary (PROF)",
+          "link": "https://www.w3.org/TR/dx-prof/"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prof/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prof/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prof/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prof/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prof/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prof/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/prof/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/prof/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.prof"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.prof",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "PROF vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.bioschemas",
+      "name": "Bioschemas vocabulary",
+      "abstract": "Terms proposed by the Bioschemas ComputationalWorkflow and FormalParameter profiles for inclusion in Schema.org, used by RO-Crate to describe [workflows](https://www.researchobject.org/ro-crate/specification/1.3/workflows.html).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "bioschemas",
+        "vocabulary",
+        "workflows"
+      ],
+      "sources": [
+        {
+          "title": "Bioschemas ComputationalWorkflow profile 1.0-RELEASE",
+          "link": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+        },
+        {
+          "title": "Bioschemas FormalParameter profile 1.0-RELEASE",
+          "link": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/bioschemas/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/bioschemas/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/bioschemas/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/bioschemas/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/bioschemas/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/bioschemas/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/bioschemas/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.bioschemas"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "Bioschemas vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.pcdm",
+      "name": "PCDM vocabulary",
+      "abstract": "Portland Common Data Model terms used by RO-Crate to describe repositories and collections of digital objects (`RepositoryObject`, `RepositoryCollection`, `RepositoryFile`, `hasMember`, `hasFile`).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "pcdm",
+        "vocabulary",
+        "repository"
+      ],
+      "sources": [
+        {
+          "title": "Portland Common Data Model (PCDM)",
+          "link": "https://pcdm.org/2016/04/18/models"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/pcdm/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/pcdm/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/pcdm/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/pcdm/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/pcdm/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/pcdm/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/pcdm/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.pcdm"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.pcdm",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "PCDM vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.codemeta",
+      "name": "CodeMeta vocabulary",
+      "abstract": "CodeMeta 3.0 terms used by RO-Crate to describe software (`buildInstructions`, `developmentStatus`, `continuousIntegration`, `embargoEndDate`, `hasSourceCode`, `isSourceCodeOf`, `issueTracker`, `readme`, `referencePublication`, `softwareSuggestions`).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "codemeta",
+        "vocabulary",
+        "software"
+      ],
+      "sources": [
+        {
+          "title": "CodeMeta 3.0",
+          "link": "https://w3id.org/codemeta/3.0"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/codemeta/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/codemeta/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/codemeta/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/codemeta/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.codemeta"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.codemeta",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "CodeMeta vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.geosparql",
+      "name": "GeoSPARQL vocabulary",
+      "abstract": "GeoSPARQL terms used by RO-Crate to support geometry on [Place](https://www.researchobject.org/ro-crate/specification/1.3/contextual-entities.html#places) contextual entities (`Geometry`, `asWKT`).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "geosparql",
+        "vocabulary",
+        "geometry"
+      ],
+      "sources": [
+        {
+          "title": "OGC GeoSPARQL",
+          "link": "http://www.opengis.net/ont/geosparql"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/geosparql/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/geosparql/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/geosparql/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/geosparql/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/geosparql/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/geosparql/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/geosparql/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/geosparql/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.geosparql"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.geosparql",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "GeoSPARQL vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.schema-org",
+      "name": "Schema.org vocabulary",
+      "abstract": "The full [Schema.org](https://schema.org/) term vocabulary, as pinned by the RO-Crate 1.3 JSON-LD context: every Schema.org type and property name mapped 1:1 to its `http://schema.org/` URI.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "schema.org",
+        "vocabulary"
+      ],
+      "sources": [
+        {
+          "title": "Schema.org",
+          "link": "https://schema.org/"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/schema-org/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/schema-org/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/schema-org/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/schema-org/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/schema-org/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/schema-org/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/schema-org/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.schema-org"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.schema-org",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "Schema.org vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.ro-terms",
+      "name": "RO-Crate terms vocabulary",
+      "abstract": "The custom RO-Crate community namespace, used in the core context for `localPath`.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "ro-terms",
+        "vocabulary"
+      ],
+      "sources": [
+        {
+          "title": "ro-terms",
+          "link": "https://github.com/ResearchObject/ro-terms"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/ro-terms/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/ro-terms/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/ro-terms/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/ro-terms/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/ro-terms/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/ro-terms/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/ro-terms/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.ro-terms"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "RO-Crate terms vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.dcterms",
+      "name": "Dublin Core Terms vocabulary",
+      "abstract": "Dublin Core Terms used by RO-Crate (`conformsTo`, `Standard`).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "dcterms",
+        "vocabulary",
+        "dublin-core"
+      ],
+      "sources": [
+        {
+          "title": "DCMI Metadata Terms",
+          "link": "http://purl.org/dc/terms/"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/dcterms/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/dcterms/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/dcterms/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/dcterms/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/dcterms/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/dcterms/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/dcterms/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/dcterms/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.dcterms"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.dcterms",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "Dublin Core Terms vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.prov-pav",
+      "name": "PROV / PAV vocabulary",
+      "abstract": "W3C PROV-O and PAV (Provenance, Authoring and Versioning) terms used by RO-Crate for provenance (`wasDerivedFrom`, `importedFrom`, `importedOn`, `importedBy`, `retrievedFrom`, `retrievedOn`, `retrievedBy`).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "prov",
+        "pav",
+        "vocabulary",
+        "provenance"
+      ],
+      "sources": [
+        {
+          "title": "PROV-O: The PROV Ontology",
+          "link": "https://www.w3.org/ns/prov#"
+        },
+        {
+          "title": "Provenance, Authoring and Versioning (PAV) ontology",
+          "link": "http://purl.org/pav/"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prov-pav/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prov-pav/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/prov-pav/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prov-pav/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prov-pav/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/prov-pav/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/prov-pav/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/prov-pav/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.prov-pav"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "PROV / PAV vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.vocab.iana-relations",
+      "name": "IANA link relations vocabulary",
+      "abstract": "The IANA link relation used by RO-Crate to mark preferred citation targets (`cite-as`, [RFC 8574](https://www.rfc-editor.org/rfc/rfc8574)).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "iana",
+        "vocabulary",
+        "link-relations"
+      ],
+      "sources": [
+        {
+          "title": "IANA Link Relations registry",
+          "link": "http://www.iana.org/assignments/relation/"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        }
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/iana-relations/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/vocab/iana-relations/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/iana-relations/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/iana-relations/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/vocab/iana-relations/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/vocab/iana-relations/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/vocab/iana-relations/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.vocab.iana-relations"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "IANA link relations vocabulary",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.researchobject.ro-crate.context",
+      "name": "RO-Crate JSON-LD Context",
+      "abstract": "Assembles the RO-Crate 1.3 JSON-LD context from its constituent vocabulary building blocks, and adds the RO-Crate-specific term overrides (`File`, `Journal`, `HTML`) and namespace prefix declarations. The context produced by this block is equivalent, term for term, to <https://w3id.org/ro/crate/1.3/context>.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-12T00:00:00Z",
+      "itemClass": "model",
+      "version": "1.0.0",
+      "tags": [
+        "ro-crate",
+        "jsonld",
+        "context"
+      ],
+      "sources": [
+        {
+          "title": "RO-Crate 1.3 Specification",
+          "link": "https://www.researchobject.org/ro-crate/specification/1.3/"
+        },
+        {
+          "title": "RO-Crate 1.3 JSON-LD Context",
+          "link": "https://w3id.org/ro/crate/1.3/context"
+        },
+        {
+          "title": "RO-Crate 1.3 Metadata section (vocabulary provenance)",
+          "link": "https://www.researchobject.org/ro-crate/specification/1.3/metadata.html"
+        }
+      ],
+      "dependsOn": [
+        "bblocks://ogc.researchobject.ro-crate.vocab.prof",
+        "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas",
+        "bblocks://ogc.researchobject.ro-crate.vocab.pcdm",
+        "bblocks://ogc.researchobject.ro-crate.vocab.codemeta",
+        "bblocks://ogc.researchobject.ro-crate.vocab.geosparql",
+        "bblocks://ogc.researchobject.ro-crate.vocab.schema-org",
+        "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms",
+        "bblocks://ogc.researchobject.ro-crate.vocab.dcterms",
+        "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav",
+        "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations"
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/context/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-08-12",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/context/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/annotated/researchobject/ro-crate/context/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/context/schema.yaml",
+      "sourceLdContext": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/context/context.jsonld",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/_sources/context/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/json-full/researchobject/ro-crate/context/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/build/generateddocs/markdown/researchobject/ro-crate/context/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/bblock/ogc.researchobject.ro-crate.context"
+        }
+      },
+      "@id": "bblocks://ogc.researchobject.ro-crate.context",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "RO-Crate JSON-LD Context",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/ogcincubator/bblocks-ro-crate/undefined/"
+      }
+    }
+  ],
+  "skos:hasTopConcept": [
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.prof"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.pcdm"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.codemeta"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.geosparql"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.schema-org"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.dcterms"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations"
+    },
+    {
+      "@id": "bblocks://ogc.researchobject.ro-crate.context"
+    }
+  ]
+}

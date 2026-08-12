@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.researchobject.ro-crate.vocab.prof - PROF vocabulary",
+  "bblockName": "PROF vocabulary",
+  "bblockId": "ogc.researchobject.ro-crate.vocab.prof",
+  "generated": "2026-08-12T08:52:28.956913+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

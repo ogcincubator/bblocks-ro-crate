@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "hasFile": "http://pcdm.org/models#hasFile",
+    "hasMember": "http://pcdm.org/models#hasMember",
+    "RepositoryCollection": "http://pcdm.org/models#Collection",
+    "RepositoryObject": "http://pcdm.org/models#Object",
+    "RepositoryFile": "http://pcdm.org/models#File",
+    "@version": 1.1
+  }
+}

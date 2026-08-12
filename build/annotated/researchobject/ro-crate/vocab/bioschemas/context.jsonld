@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "ComputationalWorkflow": "https://bioschemas.org/terms/ComputationalWorkflow",
+    "input": "https://bioschemas.org/terms/input",
+    "output": "https://bioschemas.org/terms/output",
+    "FormalParameter": "https://bioschemas.org/terms/FormalParameter",
+    "@version": 1.1
+  }
+}
