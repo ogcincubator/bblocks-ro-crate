@@ -1,0 +1,23 @@
+{
+  "name": "Dublin Core Terms vocabulary",
+  "abstract": "Dublin Core Terms used by RO-Crate (`conformsTo`, `Standard`).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "model",
+  "version": "1.0.0",
+  "tags": [
+    "dcterms",
+    "vocabulary",
+    "dublin-core"
+  ],
+  "sources": [
+    {
+      "title": "DCMI Metadata Terms",
+      "link": "http://purl.org/dc/terms/"
+    },
+    {
+      "title": "RO-Crate 1.3 JSON-LD Context",
+      "link": "https://w3id.org/ro/crate/1.3/context"
+    }
+  ]
+}

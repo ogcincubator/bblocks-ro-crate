@@ -1,0 +1,22 @@
+{
+  "name": "Schema.org vocabulary",
+  "abstract": "The full [Schema.org](https://schema.org/) term vocabulary, as pinned by the RO-Crate 1.3 JSON-LD context: every Schema.org type and property name mapped 1:1 to its `http://schema.org/` URI.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "model",
+  "version": "1.0.0",
+  "tags": [
+    "schema.org",
+    "vocabulary"
+  ],
+  "sources": [
+    {
+      "title": "Schema.org",
+      "link": "https://schema.org/"
+    },
+    {
+      "title": "RO-Crate 1.3 JSON-LD Context",
+      "link": "https://w3id.org/ro/crate/1.3/context"
+    }
+  ]
+}

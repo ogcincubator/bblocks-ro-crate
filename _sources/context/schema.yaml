@@ -1,0 +1,20 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+title: RO-Crate JSON-LD Context
+description: >-
+  Unconstrained carrier schema: this block's content is its assembled JSON-LD context, not a data
+  shape. It aggregates the RO-Crate vocabulary building blocks via `allOf`/`$ref` purely so the
+  postprocessor's context-assembly mechanism (which is driven by schema `$ref` resolution) combines
+  all of their JSON-LD contexts into one, plus this block's own RO-Crate-specific overrides and
+  prefix declarations.
+type: object
+allOf:
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.schema-org"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.pcdm"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.prof"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.dcterms"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.geosparql"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.codemeta"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav"
+  - "$ref": "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms"

@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "importedFrom": "http://purl.org/pav/importedFrom",
+    "importedOn": "http://purl.org/pav/importedOn",
+    "importedBy": "http://purl.org/pav/importedBy",
+    "retrievedFrom": "http://purl.org/pav/retrievedFrom",
+    "retrievedOn": "http://purl.org/pav/retrievedOn",
+    "retrievedBy": "http://purl.org/pav/retrievedBy"
+  }
+}

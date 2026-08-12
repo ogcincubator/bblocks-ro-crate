@@ -1,0 +1,6 @@
+{
+  "@context": {
+    "Geometry": "http://www.opengis.net/ont/geosparql#Geometry",
+    "asWKT": "http://www.opengis.net/ont/geosparql#asWKT"
+  }
+}

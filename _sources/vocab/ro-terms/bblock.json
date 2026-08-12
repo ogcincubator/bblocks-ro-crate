@@ -1,0 +1,22 @@
+{
+  "name": "RO-Crate terms vocabulary",
+  "abstract": "The custom RO-Crate community namespace, used in the core context for `localPath`.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "model",
+  "version": "1.0.0",
+  "tags": [
+    "ro-terms",
+    "vocabulary"
+  ],
+  "sources": [
+    {
+      "title": "ro-terms",
+      "link": "https://github.com/ResearchObject/ro-terms"
+    },
+    {
+      "title": "RO-Crate 1.3 JSON-LD Context",
+      "link": "https://w3id.org/ro/crate/1.3/context"
+    }
+  ]
+}

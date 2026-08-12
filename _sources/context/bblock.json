@@ -1,0 +1,26 @@
+{
+  "name": "RO-Crate JSON-LD Context",
+  "abstract": "Assembles the RO-Crate 1.3 JSON-LD context from its constituent vocabulary building blocks, and adds the RO-Crate-specific term overrides (`File`, `Journal`, `HTML`) and namespace prefix declarations. The context produced by this block is equivalent, term for term, to <https://w3id.org/ro/crate/1.3/context>.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "model",
+  "version": "1.0.0",
+  "tags": ["ro-crate", "jsonld", "context"],
+  "sources": [
+    { "title": "RO-Crate 1.3 Specification", "link": "https://www.researchobject.org/ro-crate/specification/1.3/" },
+    { "title": "RO-Crate 1.3 JSON-LD Context", "link": "https://w3id.org/ro/crate/1.3/context" },
+    { "title": "RO-Crate 1.3 Metadata section (vocabulary provenance)", "link": "https://www.researchobject.org/ro-crate/specification/1.3/metadata.html" }
+  ],
+  "dependsOn": [
+    "bblocks://ogc.researchobject.ro-crate.vocab.schema-org",
+    "bblocks://ogc.researchobject.ro-crate.vocab.pcdm",
+    "bblocks://ogc.researchobject.ro-crate.vocab.prof",
+    "bblocks://ogc.researchobject.ro-crate.vocab.dcterms",
+    "bblocks://ogc.researchobject.ro-crate.vocab.iana-relations",
+    "bblocks://ogc.researchobject.ro-crate.vocab.bioschemas",
+    "bblocks://ogc.researchobject.ro-crate.vocab.geosparql",
+    "bblocks://ogc.researchobject.ro-crate.vocab.codemeta",
+    "bblocks://ogc.researchobject.ro-crate.vocab.prov-pav",
+    "bblocks://ogc.researchobject.ro-crate.vocab.ro-terms"
+  ]
+}

@@ -1,18 +1,23 @@
 # A short, descriptive name of this building block collection
-name: My OGC Building Blocks repository
+name: RO-Crate Building Blocks
 
 # Short abstract for this collection (optional)
 abstract: |
-  This is an example text for the abstract. It should be short and to the point.
-  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+  Building blocks reconstructing the [RO-Crate 1.3](https://www.researchobject.org/ro-crate/specification/1.3/)
+  JSON-LD context from independently reusable vocabulary fragments.
 
 # Description for this collection (optional)
 description: |
-  The description can be longer. Both **the abstract** *and the description* support Markdown,
-  including [links](https://google.es).
+  This register splits the [RO-Crate 1.3 JSON-LD context](https://w3id.org/ro/crate/1.3/context) into
+  one building block per source vocabulary (Schema.org, PCDM, PROF, Dublin Core Terms, IANA link
+  relations, Bioschemas, GeoSPARQL, CodeMeta, PROV/PAV, ro-terms), plus a block that assembles them
+  back together with RO-Crate's own term overrides and namespace prefixes. The assembled context is
+  equivalent, term for term, to the original. See the
+  [`ro-crate.context`](bblocks://ogc.researchobject.ro-crate.context) block for the full composition and
+  provenance notes.
 
 # Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+identifier-prefix: ogc.researchobject.ro-crate.
 
 # List of imports ("default" is an alias for the main OGC Building Blocks Register)
 imports:
